@@ -19,12 +19,13 @@ html, body {
 /* === GRID SETUP === */
 #grid {
   display: grid;
-  grid-template-columns: repeat(4, 100vw);
-  grid-template-rows: repeat(2, 100vh);
-  width: calc(4 * 100vw);
-  height: calc(2 * 100vh);
+  grid-template-columns: repeat(3, 100vw);
+  grid-template-rows: repeat(3, 100vh);
+  width: calc(3 * 100vw);
+  height: calc(3 * 100vh);
   transition: transform 1.2s ease-in-out;
 }
+
 
 /* === GRID CELL === */
 .cell {
@@ -51,7 +52,7 @@ html, body {
   background: none;
 }
 
-/* Set overlay images for each cell */
+/* Set overlay images for each cell
 #home::before {
   background: url("../asset/images/cell-images/row-1-column-1.png") center/cover no-repeat;
 }
@@ -65,16 +66,7 @@ html, body {
   background: url("../asset/images/cell-images/row-1-column-4.png") center/cover no-repeat;
 }
 #filler-3::before {
-  content: "";
-  position: absolute;
-  inset: unset;
-  bottom: 0;
-  left: 0;
-  height: 70%;
-  width: 70%;
   background: url("../asset/images/cell-images/row-2-column-1.png") center/cover no-repeat;
-  z-index: 1;
-  pointer-events: none;
 }
 
 #about::before {
@@ -85,7 +77,7 @@ html, body {
 }
 #contact::before {
   background: url("../asset/images/cell-images/row-2-column-4.png") center/cover no-repeat;
-}
+} */
 
 /* Ensure text overlays both backgrounds */
 .cell span {
