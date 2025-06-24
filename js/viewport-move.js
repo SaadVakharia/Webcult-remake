@@ -37,5 +37,24 @@ document.querySelectorAll("nav button").forEach((btn) => {
   });
 });
 
+function updateViewportHeight() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  // Realign grid to current section with new dimensions
+  const pos = positions[currentSection.toLowerCase()];
+  if (pos) {
+    moveGrid(pos.row, pos.col);
+  }
+}
+
+window.addEventListener('resize', updateViewportHeight);
+window.addEventListener('orientationchange', updateViewportHeight);
+updateViewportHeight(); // Call on load
+
+window.addEventListener('load', () => {
+  setTimeout(() => window.scrollTo(0, 1), 100);
+});
+
 // Initialize view
 goTo("home");
