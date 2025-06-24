@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webcult Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="js/viewport-move.js" defer></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav>
+      <button data-row="0" data-col="0">Home</button>
+      <button data-row="0" data-col="2">Portfolio</button>
+      <button data-row="1" data-col="1">About</button>
+      <button data-row="1" data-col="3">Contact</button>
+    </nav>
+
+    <main id="viewport">
+      <section id="grid">
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-1-column-1.png"
+            class="cell-img"
+            alt="Home"
+          />
+          <span style="z-index: 2;">Home</span>
+        </div>
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-1-column-2.png"
+            class="cell-img"
+            alt=""
+          />
+        </div>
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-1-column-3.png"
+            class="cell-img"
+            alt="Portfolio"
+          />
+          <span style="z-index: 2;">Portfolio</span>
+        </div>
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-1-column-4.png"
+            class="cell-img"
+            alt=""
+          />
+        </div>
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-2-column-1.png"
+            class="cell-img"
+            alt=""
+          />
+        </div>
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-2-column-2.png"
+            class="cell-img"
+            alt="About"
+          />
+          <span style="z-index: 2;">About</span>
+        </div>
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-2-column-3.png"
+            class="cell-img"
+            alt=""
+          />
+        </div>
+        <div class="cell">
+          <img
+            src="asset/images/cell-images/row-2-column-4.png"
+            class="cell-img"
+            alt="Contact"
+          />
+          <span style="z-index: 2;">Contact</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 Webcult. All rights reserved.</footer>
+  </body>
+</html>
