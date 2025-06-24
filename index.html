@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webcult Demo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="js/viewport-move.js" defer></script>
-    
-    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <nav>
@@ -20,65 +18,21 @@
 
     <main id="viewport">
       <section id="grid">
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-1-column-1.png"
-            class="cell-img"
-            alt="Home"
-          />
-          <span style="z-index: 2;">Home</span>
+        <div class="cell" id="home">
+          <span style="z-index: 2">Home</span>
         </div>
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-1-column-2.png"
-            class="cell-img"
-            alt=""
-          />
+        <div class="cell filler" id="filler-1"></div>
+        <div class="cell" id="portfolio">
+          <span style="z-index: 2">Portfolio</span>
         </div>
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-1-column-3.png"
-            class="cell-img"
-            alt="Portfolio"
-          />
-          <span style="z-index: 2;">Portfolio</span>
+        <div class="cell filler" id="filler-2"></div>
+        <div class="cell filler" id="filler-3"></div>
+        <div class="cell" id="about">
+          <span style="z-index: 2">About</span>
         </div>
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-1-column-4.png"
-            class="cell-img"
-            alt=""
-          />
-        </div>
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-2-column-1.png"
-            class="cell-img"
-            alt=""
-          />
-        </div>
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-2-column-2.png"
-            class="cell-img"
-            alt="About"
-          />
-          <span style="z-index: 2;">About</span>
-        </div>
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-2-column-3.png"
-            class="cell-img"
-            alt=""
-          />
-        </div>
-        <div class="cell">
-          <img
-            src="asset/images/cell-images/row-2-column-4.png"
-            class="cell-img"
-            alt="Contact"
-          />
-          <span style="z-index: 2;">Contact</span>
+        <div class="cell filler" id="filler-4"></div>
+        <div class="cell" id="contact">
+          <span style="z-index: 2">Contact</span>
         </div>
       </section>
     </main>
