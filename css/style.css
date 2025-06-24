@@ -37,7 +37,8 @@ html, body {
   font-weight: bold;
   position: relative;
   background: url("../asset/images/background.png") center/cover no-repeat;
-  overflow: hidden;
+  overflow: auto;
+  flex-direction: column;
 }
 
 /* === IMAGE === */
