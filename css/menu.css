@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+.navigation-menu {
+    position: fixed;
+    left: -5%;
+    top: 5%;
+    width: 25%;
+    height: 60%;
+
+    font: 700 1.2em "Playwrite AU SA", cursive;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("../asset/images/paper.png");
+    transform: rotate(-15deg);
+    background-size: 100% 100%;
+    /* Stretches image to fill both width and height */
+    background-position: center;
+    z-index: 1000;
+    line-height: 28px;
+}
+
+.navigation-menu li {
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+
+#menupen {
+    margin-left: -20%;
+    margin-top: -65%;
+    width: 225%;
+    height: 120%;
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    /* IE8+ - must be on one line, unfortunately */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865482, M12=0.7071067811865466, M21=-0.7071067811865466, M22=0.7071067811865482, SizingMethod='auto expand')";
+
+    /* IE6 and 7 */
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865482,
+            M12=0.7071067811865466,
+            M21=-0.7071067811865466,
+            M22=0.7071067811865482,
+            SizingMethod='auto expand');
+}
+
+
+#penobj {
+    width: 10%;
+    height: 10%;
+    left: 7%;
+    top: 55%;
+    position: absolute;
+    z-index: 1001;
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    /* IE6 and 7 */
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.9659258262890684,
+            M12=0.25881904510252024,
+            M21=-0.25881904510252024,
+            M22=0.9659258262890684,
+            SizingMethod='auto expand');
+}
+
+.borderred {
+    border-top: 2px #C10D4D solid;
+    width: 0%;
+
+}
+
+.borderblue {
+    border-top: 2px #03F solid;
+    width: 0%;
+}

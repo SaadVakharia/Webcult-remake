@@ -28,6 +28,15 @@ function goTo(section) {
   if (!pos) return;
   moveGrid(pos.row, pos.col);
   currentSection = section;
+
+  // Update magic menu active state
+  document.querySelectorAll('.mg-list').forEach(li => {
+    if (li.getAttribute('onclick')?.includes(`goTo('${section}'`)) {
+      li.classList.add('active');
+    } else {
+      li.classList.remove('active');
+    }
+  });
 }
 
 // Attach nav button event listeners
