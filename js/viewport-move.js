@@ -60,3 +60,51 @@ window.addEventListener('load', () => {
 
 // Initialize view
 goTo("home");
+
+// Responsive menu slide-in/out for mobile
+document.addEventListener('DOMContentLoaded', () => {
+  const navMenu = document.querySelector('.navigation-menu');
+  if (!navMenu) return;
+  const menuTab = navMenu.querySelector('.menu-tab');
+
+  // Toggle menu when clicking the tab
+  if (menuTab) {
+    menuTab.addEventListener('click', function (e) {
+        e.stopPropagation();
+        navMenu.classList.toggle('menu-visible');
+        document.getElementById('penobj').classList.toggle('menu-visible');
+    });
+  }
+
+  // Show menu when clicking the menu itself (if hidden)
+  navMenu.addEventListener('click', function (e) {
+    if (!navMenu.classList.contains('menu-visible')) {
+        navMenu.classList.add('menu-visible');
+        document.getElementById('penobj').classList.add('menu-visible');
+        e.stopPropagation();
+    } else {
+        // Hide menu after delay if menu item clicked
+        if (
+            window.innerWidth <= 480 &&
+            (e.target.tagName === 'LI' || e.target.closest('li'))
+        ) {
+            setTimeout(() => {
+                navMenu.classList.remove('menu-visible');
+                document.getElementById('penobj').classList.remove('menu-visible');
+            }, 800);
+        }
+    }
+  });
+
+  // Optional: clicking outside the menu also hides it
+  document.addEventListener('click', function (e) {
+    if (
+        window.innerWidth <= 480 &&
+        navMenu.classList.contains('menu-visible') &&
+        !navMenu.contains(e.target)
+    ) {
+        navMenu.classList.remove('menu-visible');
+        document.getElementById('penobj').classList.remove('menu-visible');
+    }
+  });
+});

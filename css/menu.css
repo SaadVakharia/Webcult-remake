@@ -28,6 +28,10 @@
     cursor: pointer;
 }
 
+.menu-tab{
+    display: none;
+}
+
 #menupen {
     margin-left: -20%;
     margin-top: -65%;
