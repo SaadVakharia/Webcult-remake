@@ -28,10 +28,10 @@
     cursor: pointer;
 }
 
-
 #menupen {
     margin-left: -20%;
     margin-top: -65%;
+    max-width: 360px;
     width: 225%;
     height: 120%;
     -moz-transform: rotate(-45deg);
@@ -48,7 +48,6 @@
             M22=0.7071067811865482,
             SizingMethod='auto expand');
 }
-
 
 #penobj {
     width: 10%;

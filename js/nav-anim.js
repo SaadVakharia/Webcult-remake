@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  function isMobile() {
+    return $(window).width() < 768;
+  }
+
   $("a.panel").click(function (e) {
     e.preventDefault();
 
@@ -10,7 +14,18 @@ $(document).ready(function () {
     // Reset all borders
     $(".borderblue, .borderred").css("width", "0%");
 
-    // Animate pen and border based on section
+    // Mobile animation
+    if (isMobile()) {
+      $("#menupen").fadeOut(200, function () {
+        $(this).css({ left: "50%", top: "90%" }).fadeIn(200);
+      });
+      $("#" + section + "border")
+        .delay(400)
+        .animate({ width: "100%", opacity: "1" }, 200, "linear");
+      return;
+    }
+
+    // Desktop animation
     switch (section) {
       case "home":
         $("#menupen").transition({ x: "-30%", y: "-45%" });
@@ -68,15 +83,15 @@ $(document).ready(function () {
   });
 
   function resizePanel() {
-	const panelWidth = $(window).width() / 5;
-	$(".panel").css("width", panelWidth + "px");
-	$(".panel").css("height", $(window).height() + "px");
+    const panelWidth = $(window).width() / 5;
+    $(".panel").css("width", panelWidth + "px");
+    $(".panel").css("height", $(window).height() + "px");
 
-	// Adjust the position of the pen
-	$("#menupen").css({
-	  left: panelWidth / 2 - 20 + "px",
-	  top: $(window).height() / 2 - 20 + "px"
-	});
+    // Adjust the position of the pen
+    $("#menupen").css({
+      left: panelWidth / 2 - 20 + "px",
+      top: $(window).height() / 2 - 20 + "px"
+    });
   }
 
   $(window).resize(function () {

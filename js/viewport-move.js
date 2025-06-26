@@ -39,13 +39,6 @@ function goTo(section) {
   });
 }
 
-// Attach nav button event listeners
-document.querySelectorAll("nav button").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    goTo(btn.dataset.section);
-  });
-});
-
 function updateViewportHeight() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
