@@ -51,7 +51,7 @@
 
     .navigation-menu {
         position: fixed;
-        left: 0;
+        left: -10px;
         top: 40%;
         width: 60%;
         height: 50%;
@@ -62,7 +62,7 @@
     }
 
     .navigation-menu.menu-visible {
-        transform: translateX(0) translateY(-50%);
+        transform: translateX(-15%) translateY(-50%);
         cursor: default;
     }
 
@@ -106,10 +106,6 @@
         font-size: 0.7rem;
     }
 
-    .navigation-menu ul {
-        padding-left: 10px;
-    }
-
     .navigation-menu li {
         margin: 4px 0;
     }
@@ -130,11 +126,7 @@
         pointer-events: none;
     }
 
-    .navigation-menu.menu-visible{
-        transform: translateX(0) translateY(-50%);
-    }
-
     #penobj.menu-visible {
-        transform: translateX(150%) translateY(-50%);
+        transform: translateX(50%) translateY(-50%);
     }
 }

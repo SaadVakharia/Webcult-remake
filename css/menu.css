@@ -22,13 +22,17 @@
     line-height: 28px;
 }
 
+.navigation-menu ul {
+    padding-left: 10px;
+}
+
 .navigation-menu li {
     list-style: none;
     margin: 10px 0;
     cursor: pointer;
 }
 
-.menu-tab{
+.menu-tab {
     display: none;
 }
 
