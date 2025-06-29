@@ -36,7 +36,7 @@
     display: none;
 }
 
-#menupen {
+#menu-pen {
     margin-left: -20%;
     margin-top: -65%;
     max-width: 360px;
@@ -57,7 +57,7 @@
             SizingMethod='auto expand');
 }
 
-#penobj {
+#pen-obj {
     width: 10%;
     height: 10%;
     left: 7%;
@@ -77,13 +77,13 @@
             SizingMethod='auto expand');
 }
 
-.borderred {
+.border-red {
     border-top: 2px #C10D4D solid;
     width: 0%;
 
 }
 
-.borderblue {
+.border-blue {
     border-top: 2px #03F solid;
     width: 0%;
 }

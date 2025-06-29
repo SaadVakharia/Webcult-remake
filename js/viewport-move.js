@@ -10,7 +10,7 @@ const positions = {
   filler3: { row: 1, col: 2 },
   contact: { row: 2, col: 0 },
   filler4: { row: 2, col: 1 },
-  services: { row: 2, col: 2 }
+  services: { row: 2, col: 2 },
 };
 
 let currentSection = "home";
@@ -28,20 +28,11 @@ function goTo(section) {
   if (!pos) return;
   moveGrid(pos.row, pos.col);
   currentSection = section;
-
-  // Update magic menu active state
-  document.querySelectorAll('.mg-list').forEach(li => {
-    if (li.getAttribute('onclick')?.includes(`goTo('${section}'`)) {
-      li.classList.add('active');
-    } else {
-      li.classList.remove('active');
-    }
-  });
 }
 
 function updateViewportHeight() {
   const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 
   // Realign grid to current section with new dimensions
   const pos = positions[currentSection.toLowerCase()];
@@ -50,11 +41,11 @@ function updateViewportHeight() {
   }
 }
 
-window.addEventListener('resize', updateViewportHeight);
-window.addEventListener('orientationchange', updateViewportHeight);
+window.addEventListener("resize", updateViewportHeight);
+window.addEventListener("orientationchange", updateViewportHeight);
 updateViewportHeight(); // Call on load
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   setTimeout(() => window.scrollTo(0, 1), 100);
 });
 
@@ -62,49 +53,45 @@ window.addEventListener('load', () => {
 goTo("home");
 
 // Responsive menu slide-in/out for mobile
-document.addEventListener('DOMContentLoaded', () => {
-  const navMenu = document.querySelector('.navigation-menu');
+document.addEventListener("DOMContentLoaded", () => {
+  const navMenu = document.querySelector(".navigation-menu");
   if (!navMenu) return;
-  const menuTab = navMenu.querySelector('.menu-tab');
+  const menuTab = navMenu.querySelector(".menu-tab");
 
   // Toggle menu when clicking the tab
   if (menuTab) {
-    menuTab.addEventListener('click', function (e) {
-        e.stopPropagation();
-        navMenu.classList.toggle('menu-visible');
-        document.getElementById('penobj').classList.toggle('menu-visible');
+    menuTab.addEventListener("click", function (e) {
+      e.stopPropagation();
+      navMenu.classList.toggle("menu-visible");
+      document.getElementById("pen-obj").classList.toggle("menu-visible");
     });
   }
 
   // Show menu when clicking the menu itself (if hidden)
-  navMenu.addEventListener('click', function (e) {
-    if (!navMenu.classList.contains('menu-visible')) {
-        navMenu.classList.add('menu-visible');
-        document.getElementById('penobj').classList.add('menu-visible');
-        e.stopPropagation();
+  navMenu.addEventListener("click", function (e) {
+    if (!navMenu.classList.contains("menu-visible")) {
+      navMenu.classList.add("menu-visible");
+      document.getElementById("pen-obj").classList.add("menu-visible");
+      e.stopPropagation();
     } else {
-        // Hide menu after delay if menu item clicked
-        if (
-            window.innerWidth <= 480 &&
-            (e.target.tagName === 'LI' || e.target.closest('li'))
-        ) {
-            setTimeout(() => {
-                navMenu.classList.remove('menu-visible');
-                document.getElementById('penobj').classList.remove('menu-visible');
-            }, 800);
-        }
+      // Hide menu after delay if menu item clicked
+      if (e.target.tagName === "LI" || e.target.closest("li")) {
+        setTimeout(() => {
+          navMenu.classList.remove("menu-visible");
+          document.getElementById("pen-obj").classList.remove("menu-visible");
+        }, 800);
+      }
     }
   });
 
   // Optional: clicking outside the menu also hides it
-  document.addEventListener('click', function (e) {
+  document.addEventListener("click", function (e) {
     if (
-        window.innerWidth <= 480 &&
-        navMenu.classList.contains('menu-visible') &&
-        !navMenu.contains(e.target)
+      navMenu.classList.contains("menu-visible") &&
+      !navMenu.contains(e.target)
     ) {
-        navMenu.classList.remove('menu-visible');
-        document.getElementById('penobj').classList.remove('menu-visible');
+      navMenu.classList.remove("menu-visible");
+      document.getElementById("pen-obj").classList.remove("menu-visible");
     }
   });
 });
