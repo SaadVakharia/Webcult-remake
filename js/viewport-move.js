@@ -4,13 +4,14 @@ const grid = document.getElementById("grid");
 const positions = {
   home: { row: 0, col: 0 },
   filler1: { row: 0, col: 1 },
-  about: { row: 0, col: 2 },
-  filler2: { row: 1, col: 0 },
-  portfolio: { row: 1, col: 1 },
-  filler3: { row: 1, col: 2 },
-  contact: { row: 2, col: 0 },
-  filler4: { row: 2, col: 1 },
-  services: { row: 2, col: 2 },
+  portfolio: { row: 0, col: 2 },
+  filler2: { row: 0, col: 3 },
+  services: { row: 0, col: 4 },
+  filler3: { row: 1, col: 0 },
+  about: { row: 1, col: 1 },
+  filler4: { row: 1, col: 2 },
+  contact: { row: 1, col: 3 },
+  filler5: { row: 1, col: 4 },
 };
 
 let currentSection = "home";

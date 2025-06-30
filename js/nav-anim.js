@@ -42,101 +42,11 @@ $(document).ready(function () {
           .transition({ rotate: "-45deg" })
           .transition({ x: 0, y: 0 }); // Optional: Reset to center if needed
 
-        $(`#${section}border`)
+        $(`#${section}-border`)
           .delay(500)
           .animate({ width: "100%", opacity: "1" }, 300, "linear");
         break;
     }
-
-    // // Desktop animation
-    // switch (section) {
-
-    //   case "home":
-    //     const target = $(this).closest("li"); // The <li> of 'Home'
-    //     const targetOffset = target.offset(); // Position of the <li>
-    //     const penOffset = $("#menu-pen").offset(); // Current pen position
-
-    //     const offsetAdjustX = -35;
-    //     const offsetAdjustY = 20;
-    //     let resetX = "0%";
-
-    //     let deltaX = targetOffset.left - penOffset.left + offsetAdjustX;
-    //     let deltaY = targetOffset.top - penOffset.top + offsetAdjustY;
-
-    //     if ($(window).width() < 768) {
-    //       // For mobile, adjust the delta values
-    //       const mobileOffsetAdjustX = -35;
-    //       const mobileOffsetAdjustY = 20;
-    //       resetX = "8%";
-
-    //       deltaX += mobileOffsetAdjustX;
-    //       deltaY += mobileOffsetAdjustY;
-    //     }
-
-    //     $("#menu-pen")
-    //       .transition({ x: deltaX, y: deltaY, rotate: "80deg" })
-    //       .transition({ x: resetX, duration: "500" })
-    //       .transition({ rotate: "-45deg" })
-    //       .transition({ x: 0, y: 0 }); // Optional: Reset to center if needed
-
-    //     $("#home-border")
-    //       .delay(500)
-    //       .animate({ width: "100%", opacity: "1" }, 300, "linear");
-    //     break;
-
-    //   // $("#menu-pen").transition({ x: "-30%", y: "-45%" });
-    //   // $("#menu-pen").transition({ rotate: "80deg" });
-    //   // $("#menu-pen").transition({ x: "8%", duration: "500" });
-    //   // $("#menu-pen").transition({ rotate: "-45deg" });
-    //   // $("#menu-pen").transition({ x: "0px", y: "0px" });
-    //   // $("#home-border")
-    //   //   .delay(800)
-    //   //   .animate({ width: "100%", opacity: "1" }, 300, "linear");
-    //   // break;
-    //   case "portfolio":
-    //     $("#menu-pen").transition({ x: "-30%", y: "16%" });
-    //     $("#menu-pen").transition({ rotate: "80deg" });
-    //     $("#menu-pen").transition({ x: "10%", duration: "500" });
-    //     $("#menu-pen").transition({ rotate: "-45deg" });
-    //     $("#menu-pen").transition({ x: "0px", y: "0px" });
-    //     $("#portfolio-border")
-    //       .delay(800)
-    //       .animate({ width: "100%", opacity: "1" }, 300, "linear");
-    //     break;
-    //   case "services":
-    //     $("#menu-pen").transition({ x: "-30%", y: "80%" });
-    //     $("#menu-pen").transition({ rotate: "80deg" });
-    //     $("#menu-pen").transition({ x: "12%", duration: "500" });
-    //     $("#menu-pen").transition({ rotate: "-45deg" });
-    //     $("#menu-pen").transition({ x: "0px", y: "0px" });
-    //     $("#services-border")
-    //       .delay(800)
-    //       .animate({ width: "100%", opacity: "1" }, 300, "linear");
-    //     break;
-    //   case "contactus":
-    //     $("#menu-pen").transition({ x: "-30%", y: "140%" });
-    //     $("#menu-pen").transition({ rotate: "80deg" });
-    //     $("#menu-pen").transition({ x: "14%", duration: "500" });
-    //     $("#menu-pen").transition({ rotate: "-45deg" });
-    //     $("#menu-pen").transition({ x: "0px", y: "0px" });
-    //     $("#contactus-border")
-    //       .delay(800)
-    //       .animate({ width: "100%", opacity: "1" }, 300, "linear");
-    //     break;
-    //   case "aboutus":
-    //     $("#menu-pen").transition({ x: "-30%", y: "204%" });
-    //     $("#menu-pen").transition({ rotate: "80deg" });
-    //     $("#menu-pen").transition({ x: "16%", duration: "500" });
-    //     $("#menu-pen").transition({ rotate: "-45deg" });
-    //     $("#menu-pen").transition({ x: "0px", y: "0px" });
-    //     $("#aboutus-border")
-    //       .delay(800)
-    //       .animate({ width: "100%", opacity: "1" }, 300, "linear");
-    //     break;
-    //   default:
-    //     break;
-    // }
-
   });
 
   function resizePanel() {
