@@ -4,11 +4,6 @@
         font-size: 1.2em;
     }
 
-    .cell span {
-        font-size: 1.2rem;
-        padding: 0.4rem 0.75rem;
-    }
-
     .navigation-menu {
         left: -6%;
         font-size: 1rem;
@@ -26,11 +21,6 @@
 @media (max-width: 768px) {
     #loader .loader-text {
         font-size: 1.1em;
-    }
-
-    .cell span {
-        font-size: 1.2rem;
-        padding: 0.4rem 0.75rem;
     }
 
     .navigation-menu {
@@ -54,11 +44,6 @@
 @media (max-width: 480px) {
     #loader .loader-text {
         font-size: 1em;
-    }
-
-    .cell span {
-        font-size: 1rem;
-        padding: 0.3rem 0.5rem;
     }
 
     .navigation-menu {

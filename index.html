@@ -7,8 +7,11 @@
 
     <link rel="icon" href="./asset/icons/favicon.ico" />
 
+    <script src="js/loader.js" defer></script>
     <script src="js/viewport-move.js" defer></script>
     <script src="js/nav-anim.js" defer></script>
+
+    <script src="sections/js/home-anim.js" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
@@ -16,6 +19,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+
+    <link rel="stylesheet" href="sections/css/home.css" />
   </head>
 
   <body>
@@ -55,38 +60,21 @@
     <main id="viewport">
       <section id="grid">
         <!-- Row 1 -->
-        <div class="cell" id="home">
-          <span style="z-index: 2">Home</span>
-        </div>
+        <div class="cell" id="home"></div>
         <div class="cell filler" id="filler-1"></div>
-        <div class="cell" id="portfolio">
-          <span style="z-index: 2">Portfolio</span>
-        </div>
+        <div class="cell" id="portfolio"></div>
         <div class="cell filler" id="filler-2"></div>
-        <div class="cell" id="services">
-          <span style="z-index: 2">Services</span>
-        </div>
+        <div class="cell" id="services"></div>
 
         <!-- Row 2 -->
         <div class="cell filler" id="filler-3"></div>
-        <div class="cell" id="about">
-          <span style="z-index: 2">About</span>
-        </div>
+        <div class="cell" id="about"></div>
         <div class="cell filler" id="filler-4"></div>
-        <div class="cell" id="contact">
-          <span style="z-index: 2">Contact</span>
-        </div>
+        <div class="cell" id="contact"></div>
         <div class="cell filler" id="filler-5"></div>
       </section>
     </main>
 
     <footer>All Rights Reserved © 2025 Webcult.</footer>
-    <script>
-      window.addEventListener("load", function () {
-        setTimeout(function () {
-          document.getElementById("loader").style.display = "none";
-        }, 0);
-      });
-    </script>
   </body>
 </html>
