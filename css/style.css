@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 /* === RESET === */
 html,
@@ -8,7 +10,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* === CONTAINER === */
@@ -79,7 +81,7 @@ footer {
   position: fixed;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: #484237;
   z-index: 10;
   text-align: center;
   backdrop-filter: blur(6px);
@@ -93,6 +95,7 @@ nav {
 footer {
   bottom: 0;
   font-size: 0.875rem;
+  color: white;
   padding: 0.5rem 0;
 }
 

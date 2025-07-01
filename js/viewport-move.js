@@ -1,6 +1,6 @@
 const grid = document.getElementById("grid");
 
-// Map section names to 3x3 grid positions
+// Map section names to 5x2 grid positions
 const positions = {
   home: { row: 0, col: 0 },
   filler1: { row: 0, col: 1 },
@@ -27,7 +27,31 @@ function moveGrid(row, col) {
 function goTo(section) {
   const pos = positions[section.toLowerCase()];
   if (!pos) return;
-  moveGrid(pos.row, pos.col);
+  switch (section.toLowerCase()) {
+    case "home":
+      if (currentSection === "home") return;
+      moveGrid(positions.filler3.row, positions.filler3.col);
+      break;
+    case "portfolio":
+      if (currentSection === "portfolio") return;
+      moveGrid(positions.filler2.row, positions.filler2.col);
+      break;
+    case "services":
+      if (currentSection === "services") return;
+      moveGrid(positions.filler5.row, positions.filler5.col);
+      break;
+    case "about":
+      if (currentSection === "about") return;
+      moveGrid(positions.filler4.row, positions.filler4.col);
+      break;
+    case "contact":
+      if (currentSection === "contact") return;
+      moveGrid(positions.filler1.row, positions.filler1.col);
+      break;
+  }
+  setTimeout(() => {
+    moveGrid(pos.row, pos.col);
+  }, 1250);
   currentSection = section;
 }
 
@@ -50,8 +74,8 @@ window.addEventListener("load", () => {
   setTimeout(() => window.scrollTo(0, 1), 100);
 });
 
-// Initialize view
-goTo("home");
+// Initial grid position based on current section
+moveGrid(positions.home.row, positions.home.col);
 
 // Responsive menu slide-in/out for mobile
 document.addEventListener("DOMContentLoaded", () => {
