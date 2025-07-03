@@ -39,7 +39,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 3vh;
   font-weight: bold;
   position: relative;
   background: url("../asset/images/background2.png") center/cover no-repeat;
@@ -62,22 +62,22 @@ footer {
   position: fixed;
   left: 0;
   width: 100%;
-  background: #484237;
   z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
   text-align: center;
-  backdrop-filter: blur(6px);
 }
 
 nav {
   top: 0;
   padding: 0.75rem 0.5rem;
+  font-size: 1.5vw;
 }
 
 footer {
   bottom: 0;
-  font-size: 0.875rem;
+  font-size: 2vh;
   color: white;
-  padding: 0.5rem 0;
+  padding: 0.5vw 0;
 }
 
 /* === LOADER === */
@@ -96,11 +96,11 @@ footer {
 }
 
 .spinner {
-  border: 8px solid #eee;
-  border-top: 8px solid #c10d4d;
+  border: 0.6vw solid #eee;
+  border-top: 0.6vw solid #c10d4d;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 4vw;
+  height: 4vw;
   animation: spin 1s linear infinite;
 }
 
@@ -112,11 +112,11 @@ footer {
 
 #loader .loader-text {
   display: block;
-  margin-top: 24px;
+  margin-top: 2vh;
   font-family: 'Playwrite AU SA', cursive;
-  font-size: 1.5em;
+  font-size: 2vw;
   font-weight: bold;
   color: #c10d4d;
-  letter-spacing: 2px;
+  letter-spacing: 0.2vw;
   text-align: center;
 }

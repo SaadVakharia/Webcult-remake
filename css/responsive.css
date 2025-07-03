@@ -30,8 +30,7 @@
         width: 35%;
         height: 50%;
 
-        font-size: 1em;
-        line-height: 20px;
+        font-size: 2vw;
     }
 
     #menu-pen {
@@ -51,9 +50,10 @@
         left: -10px;
         top: 40%;
         width: 60%;
-        height: 50%;
+        height: 36%;
         transform: translateX(-85%) translateY(-50%);
-        line-height: 28px;
+        font-size: 4vw;
+        line-height: 6vw;
         transition: transform 0.5s ease-in-out;
         z-index: 1000;
     }
@@ -100,7 +100,7 @@
         transform-origin: right center;
         right: 10px;
         top: 55%;
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 
     .navigation-menu li {
@@ -116,7 +116,7 @@
     #pen-obj {
         position: fixed;
         left: 0;
-        top: 60%;
+        top: 57%;
         z-index: 1001;
         transform: translateX(-460%) translateY(-50%);
         transition: transform 0.5s ease-in-out;
@@ -203,7 +203,7 @@
 
     #pen-obj {
         position: fixed;
-        left:2%;
+        left: 2%;
         top: 60%;
         width: 7%;
         height: 10%;

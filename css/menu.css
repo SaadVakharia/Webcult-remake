@@ -1,12 +1,10 @@
 .navigation-menu {
     position: fixed;
-    left: -5%;
-    top: 5%;
-    width: 25%;
-    height: 60%;
-
-    font: 700 1.2em "Playwrite AU SA", cursive;
-
+    left: -5vw;
+    top: 10vh;
+    width: 25vw;
+    height: 60vh;
+    font: 700 1.4vw "Playwrite AU SA", cursive;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,19 +12,18 @@
     background: url("../asset/images/paper.png");
     transform: rotate(-15deg);
     background-size: 100% 100%;
-    /* Stretches image to fill both width and height */
     background-position: center;
     z-index: 1000;
-    line-height: 28px;
+    line-height: 1.5vw;
 }
 
 .navigation-menu ul {
-    padding-left: 10px;
+    padding-left: 1vw;
 }
 
 .navigation-menu li {
     list-style: none;
-    margin: 10px 0;
+    margin: 1vw 0;
     cursor: pointer;
 }
 
@@ -35,11 +32,9 @@
 }
 
 #menu-pen {
-    margin-left: -20%;
-    margin-top: -65%;
-    max-width: 360px;
-    width: 225%;
-    height: 120%;
+    margin-left: 0vw;
+    margin-top: -10vh;
+    max-width: 20vw;
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
@@ -56,10 +51,10 @@
 }
 
 #pen-obj {
-    width: 10%;
-    height: 10%;
-    left: 7%;
-    top: 55%;
+    width: 10vw;
+    height: 10vh;
+    left: 7vw;
+    top: 55vh;
     position: absolute;
     z-index: 1001;
     -ms-transform: rotate(-15deg);
@@ -76,12 +71,11 @@
 }
 
 .border-red {
-    border-top: 2px #C10D4D solid;
-    width: 0%;
-
+    border-top: 0.15vw #C10D4D solid;
+    width: 0vw;
 }
 
 .border-blue {
-    border-top: 2px #03F solid;
-    width: 0%;
+    border-top: 0.15vw #03F solid;
+    width: 0vw;
 }
