@@ -154,6 +154,11 @@
   }
 }
 
+@media screen and (max-height: 431px) and (orientation: landscape){
+  .home-section .tablet {
+    margin-left: 0 !important;
+  }
+}
 @media screen and (max-width: 933px) {
   .home-section {
     margin: 0;

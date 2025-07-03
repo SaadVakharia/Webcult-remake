@@ -71,11 +71,11 @@
 }
 
 .border-red {
-    border-top: 0.15vw #C10D4D solid;
+    border-top: 0.25vh #C10D4D solid;
     width: 0vw;
 }
 
 .border-blue {
-    border-top: 0.15vw #03F solid;
+    border-top: 0.25vh #03F solid;
     width: 0vw;
 }
