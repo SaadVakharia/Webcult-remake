@@ -43,8 +43,6 @@ body {
   font-weight: bold;
   position: relative;
   background: url("../asset/images/background2.png") center/cover no-repeat;
-  /* background: black; */
-  overflow: auto;
   flex-direction: column;
 }
 

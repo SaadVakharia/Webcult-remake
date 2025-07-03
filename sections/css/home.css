@@ -1,15 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Public+Sans&display=swap");
 
 .home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-section .tablet {
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin-left: 16vw;
+  max-height: 100vh;
+  margin-left: 12vw;
+  margin-top: -12vh;
+  scale: 0.9;
 }
+
 
 .tablet-screen img {
   width: 12vw;
@@ -55,13 +64,14 @@
   color: #4480ff;
 }
 
-.home-section .tablet-mockup {
+.home-section .tablet .tablet-mockup {
   width: 60vw;
   height: 80vh;
   background: #222;
   border: 4px solid white;
   border-radius: 36px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: -1em -0.5em 1.5em hsla(0, 0%, 0%, 0.4),
+    0 0 0 1px hsl(0, 0%, 67%) inset;
   margin: 0;
   position: relative;
   display: flex;
@@ -69,9 +79,9 @@
   justify-content: center;
 }
 
-.home-section .tablet-screen {
-  width: 59vw;
-  height: 78vh;
+.home-section .tablet .tablet-screen {
+  width: 58.5vw;
+  height: 77vh;
   background: rgb(240, 240, 240);
   border-radius: 24px;
   overflow: hidden;
@@ -81,10 +91,13 @@
   justify-content: center;
 }
 
-.home-section .stylus img {
+.home-section .tablet .stylus img {
   height: 50vh;
   width: 5vw;
+  background: transparent;
+  filter: drop-shadow(-8px -2px 4px rgba(0, 0, 0, 0.4));
 }
+
 
 @keyframes blink {
   0% {
@@ -101,17 +114,17 @@
 }
 
 @media screen and (max-width: 768px) {
-  .home-section .stylus img {
+  .home-section .tablet .stylus img {
     height: 50vh;
     width: 8vw;
   }
 
-  .home-section .tablet-mockup {
+  .home-section .tablet .tablet-mockup {
     width: 50vw;
     height: 80vh;
   }
 
-  .home-section .tablet-screen {
+  .home-section .tablet .tablet-screen {
     width: 48vw;
     height: 78vh;
   }
@@ -134,18 +147,18 @@
     color: #747474;
   }
 
-  .home-section .stylus img {
+  .home-section .tablet .stylus img {
     height: 40vh;
     width: 16vw;
     margin-left: -4vw;
   }
 
-  .home-section .tablet-mockup {
+  .home-section .tablet .tablet-mockup {
     width: 80vw;
     height: 74vh;
   }
 
-  .home-section .tablet-screen {
+  .home-section .tablet .tablet-screen {
     width: 76vw;
     height: 72vh;
   }
