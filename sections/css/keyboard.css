@@ -381,3 +381,9 @@ button[aria-pressed="true"] .dot-light {
         transform: translateX(-0.5em);
     }
 }
+
+@media screen and (max-width: 431px) {
+    .keyboard {
+        display: none;
+    }
+}

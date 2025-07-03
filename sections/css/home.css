@@ -131,18 +131,17 @@
 @media screen and (max-width: 431px) {
   .home-section {
     flex-direction: row;
-    margin-left: 12vw;
+    margin-left: 14vw !important;
     align-items: center;
   }
 
   .home-section .tablet {
-    margin-left: 10vw;
-    margin-top: -4vh;
+    margin: 0;
   }
 
   .tablet-screen img {
-    width: 20vw;
-    height: 20vw;
+    width: 32vw;
+    height: 32vw;
   }
 
   .home-section h1 {
@@ -163,6 +162,7 @@
   .home-section .tablet .tablet-screen {
     width: 76vw;
     height: 72vh;
+    gap: 2vh;
   }
 
   .keyboard {
@@ -174,7 +174,6 @@
 
 @media screen and (max-width: 933px) {
   .home-section {
-    margin-left: 4vw;
-    margin-bottom: 8vh;
+    margin: 0;
   }
 }
