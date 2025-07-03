@@ -63,26 +63,17 @@
   color: #4480ff;
 }
 
-.home-section .tablet .tablet-mockup {
-  width: 60vw;
-  height: 80vh;
-  background: #222;
-  border: 0.3vw solid white;
-  border-radius: 3vw;
-  box-shadow: -2vw -1vw 3vw hsla(0, 0%, 0%, 0.4),
-    0 0 0 0.1vw hsl(0, 0%, 67%) inset;
-  margin: 0;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .home-section .tablet .tablet-screen {
   width: 58.5vw;
   height: 77vh;
-  background: rgb(240, 240, 240);
+  background: #EDEDED;
   border-radius: 2.4vw;
+  border: 6px solid black;
+  outline: 3px solid silver;
+  box-shadow:
+    -2vw -1vw 3vw hsla(0, 0%, 0%, 0.4),
+    0 0 0 0.1vw hsl(0, 0%, 67%) inset;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -113,13 +104,9 @@
 
 @media screen and (max-width: 768px) {
   .home-section .tablet .stylus img {
+    max-height: 280px;
     height: 50vh;
     width: 8vw;
-  }
-
-  .home-section .tablet .tablet-mockup {
-    width: 50vw;
-    height: 80vh;
   }
 
   .home-section .tablet .tablet-screen {
@@ -154,14 +141,9 @@
     margin-left: -4vw;
   }
 
-  .home-section .tablet .tablet-mockup {
-    width: 80vw;
-    height: 74vh;
-  }
-
   .home-section .tablet .tablet-screen {
-    width: 76vw;
-    height: 72vh;
+    width: 75vw;
+    height: 57vh;
     gap: 2vh;
   }
 
