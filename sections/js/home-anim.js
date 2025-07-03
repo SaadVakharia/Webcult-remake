@@ -1,13 +1,13 @@
 function startHomeAnimation() {
   const words = ["Build", "Create", "Design", "Code"];
-  const colors = ["blue", "green", "yellow", "red"];
+  const colors = ["#151FDF", "#B40158", "#A33089", "#680993"];
   const text = document.querySelector("#home .text");
   if (!text) return;
   let currentIndex = 0;
 
   function printChar(word, colorIndex) {
     let i = 0;
-    text.className = "text " + colors[colorIndex];
+    text.style.color = colors[colorIndex];
     text.textContent = "";
     let typeInterval = setInterval(() => {
       if (i >= word.length) {
