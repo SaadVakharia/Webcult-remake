@@ -1,4 +1,5 @@
 const grid = document.getElementById("grid");
+const viewport = document.getElementById("viewport");
 
 // Map section names to 5x2 grid positions
 const positions = {
@@ -9,49 +10,72 @@ const positions = {
   services: { row: 0, col: 4 },
   filler3: { row: 1, col: 0 },
   about: { row: 1, col: 1 },
-  filler4: { row: 1, col: 2 },
   contact: { row: 1, col: 3 },
   filler5: { row: 1, col: 4 },
 };
 
 let currentSection = "home";
 
-// Move grid to specified row and column
-function moveGrid(row, col) {
-  const x = col * window.innerWidth;
-  const y = row * window.innerHeight;
-  grid.style.transform = `translate(-${x}px, -${y}px)`;
+// Maps section names to their corresponding filler positions
+const fillerPositions = {
+  home: positions.filler3,
+  portfolio: positions.filler2,
+  services: positions.filler5,
+  about: { row: positions.portfolio.row + 1, col: positions.portfolio.col },
+  contact: positions.filler1,
+};
+
+// Move the grid to a specific row and column
+function moveGridTo(row, col) {
+  const xOffset = col * window.innerWidth;
+  const yOffset = row * window.innerHeight;
+  grid.style.transform = `translate(-${xOffset}px, -${yOffset}px)`;
 }
 
-// Go to a section by name
-function goTo(section) {
-  const pos = positions[section.toLowerCase()];
-  if (!pos) return;
-  switch (section.toLowerCase()) {
-    case "home":
-      if (currentSection === "home") return;
-      moveGrid(positions.filler3.row, positions.filler3.col);
-      break;
-    case "portfolio":
-      if (currentSection === "portfolio") return;
-      moveGrid(positions.filler2.row, positions.filler2.col);
-      break;
-    case "services":
-      if (currentSection === "services") return;
-      moveGrid(positions.filler5.row, positions.filler5.col);
-      break;
-    case "about":
-      if (currentSection === "about") return;
-      moveGrid(positions.filler4.row, positions.filler4.col);
-      break;
-    case "contact":
-      if (currentSection === "contact") return;
-      moveGrid(positions.filler1.row, positions.filler1.col);
-      break;
+// Navigate to a specific section
+function goToSection(sectionName) {
+  const section = sectionName.toLowerCase();
+  const targetPos = positions[section];
+  if (!targetPos) return;
+
+  if (section === currentSection) return;
+
+  // Enable scrolling only for portfolio section
+  viewport.style.overflowY = section === "portfolio" ? "auto" : "hidden";
+
+  // Scroll to top if leaving portfolio
+  if (currentSection === "portfolio") {
+    viewport.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Wait for scroll to finish before moving the grid
+    setTimeout(() => {
+      // Move to intermediate filler position first (for transition effect)
+      const intermediatePos = fillerPositions[section];
+      if (intermediatePos) {
+        moveGridTo(intermediatePos.row, intermediatePos.col);
+      }
+
+      // Move to the final target section after a delay
+      setTimeout(() => {
+        moveGridTo(targetPos.row, targetPos.col);
+      }, 1250);
+
+      currentSection = section;
+    }, 500); // 500ms delay for smooth scroll
+    return;
   }
+
+  // Move to intermediate filler position first (for transition effect)
+  const intermediatePos = fillerPositions[section];
+  if (intermediatePos) {
+    moveGridTo(intermediatePos.row, intermediatePos.col);
+  }
+
+  // Move to the final target section after a delay
   setTimeout(() => {
-    moveGrid(pos.row, pos.col);
+    moveGridTo(targetPos.row, targetPos.col);
   }, 1250);
+
   currentSection = section;
 }
 

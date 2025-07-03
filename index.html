@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/responsive.css" />
 
     <link rel="stylesheet" href="sections/css/home.css" />
+    <link rel="stylesheet" href="sections/css/portfolio.css" />
     <link rel="stylesheet" href="sections/css/keyboard.css" />
   </head>
 
@@ -32,23 +33,23 @@
     <div class="navigation-menu">
       <div class="menu-tab"><span>MENU</span></div>
       <ul>
-        <li onclick="goTo('filler-1'); goTo('home');">
+        <li onclick="goToSection('filler-1'); goToSection('home');">
           <a class="selected panel" style="color: #c10d4d">Home</a>
         </li>
         <li class="border-blue" id="home-border" style="width: 100%"></li>
-        <li onclick="goTo('portfolio')">
+        <li onclick="goToSection('portfolio')">
           <a class="panel" style="color: #03f">Portfolio</a>
         </li>
         <li class="border-red" id="portfolio-border"></li>
-        <li onclick="goTo('services')">
+        <li onclick="goToSection('services')">
           <a class="panel" style="color: #c10d4d">Services</a>
         </li>
         <li class="border-blue" id="services-border"></li>
-        <li onclick="goTo('contact')">
+        <li onclick="goToSection('contact')">
           <a class="panel" style="color: #03f">Contact Us</a>
         </li>
         <li class="border-red" id="contactus-border"></li>
-        <li onclick="goTo('about')">
+        <li onclick="goToSection('about')">
           <a class="panel" style="color: #c10d4d">About Us</a>
         </li>
         <li class="border-blue" id="aboutus-border"></li>
@@ -70,7 +71,6 @@
         <!-- Row 2 -->
         <div class="cell filler" id="filler-3"></div>
         <div class="cell" id="about"></div>
-        <div class="cell filler" id="filler-4"></div>
         <div class="cell" id="contact"></div>
         <div class="cell filler" id="filler-5"></div>
       </section>
