@@ -25,34 +25,30 @@ function moveGrid(row, col) {
 
 // Go to a section by name
 function goTo(section) {
-  const pos = positions[section.toLowerCase()];
-  if (!pos) return;
-  switch (section.toLowerCase()) {
-    case "home":
-      if (currentSection === "home") return;
-      moveGrid(positions.filler3.row, positions.filler3.col);
-      break;
-    case "portfolio":
-      if (currentSection === "portfolio") return;
-      moveGrid(positions.filler2.row, positions.filler2.col);
-      break;
-    case "services":
-      if (currentSection === "services") return;
-      moveGrid(positions.filler5.row, positions.filler5.col);
-      break;
-    case "about":
-      if (currentSection === "about") return;
-      moveGrid(positions.filler4.row, positions.filler4.col);
-      break;
-    case "contact":
-      if (currentSection === "contact") return;
-      moveGrid(positions.filler1.row, positions.filler1.col);
-      break;
-  }
-  setTimeout(() => {
+  const sectionName = section.toLowerCase();
+  const pos = positions[sectionName];
+  if (!pos || currentSection === sectionName) return;
+
+  // Map section names to their filler position objects directly
+  const fillerMap = {
+    home: positions.filler3,
+    portfolio: positions.filler2,
+    services: positions.filler5,
+    about: positions.filler4,
+    contact: positions.filler1,
+  };
+
+  const filler = fillerMap[sectionName];
+  if (filler) {
+    moveGrid(filler.row, filler.col);
+    setTimeout(() => {
+      moveGrid(pos.row, pos.col);
+      currentSection = sectionName;
+    }, 1250);
+  } else {
     moveGrid(pos.row, pos.col);
-  }, 1250);
-  currentSection = section;
+    currentSection = sectionName;
+  }
 }
 
 function updateViewportHeight() {
