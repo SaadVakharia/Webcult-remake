@@ -32,51 +32,32 @@ function moveGridTo(row, col) {
   grid.style.transform = `translate(-${xOffset}px, -${yOffset}px)`;
 }
 
-// Navigate to a specific section
-function goToSection(sectionName) {
-  const section = sectionName.toLowerCase();
-  const targetPos = positions[section];
-  if (!targetPos) return;
+// Go to a section by name
+function goTo(section) {
+  const sectionName = section.toLowerCase();
+  const pos = positions[sectionName];
+  if (!pos || currentSection === sectionName) return;
 
-  if (section === currentSection) return;
+  // Map section names to their filler position objects directly
+  const fillerMap = {
+    home: positions.filler3,
+    portfolio: positions.filler2,
+    services: positions.filler5,
+    about: positions.filler4,
+    contact: positions.filler1,
+  };
 
-  // Enable scrolling only for portfolio section
-  viewport.style.overflowY = section === "portfolio" ? "auto" : "hidden";
-
-  // Scroll to top if leaving portfolio
-  if (currentSection === "portfolio") {
-    viewport.scrollTo({ top: 0, behavior: "smooth" });
-
-    // Wait for scroll to finish before moving the grid
+  const filler = fillerMap[sectionName];
+  if (filler) {
+    moveGrid(filler.row, filler.col);
     setTimeout(() => {
-      // Move to intermediate filler position first (for transition effect)
-      const intermediatePos = fillerPositions[section];
-      if (intermediatePos) {
-        moveGridTo(intermediatePos.row, intermediatePos.col);
-      }
-
-      // Move to the final target section after a delay
-      setTimeout(() => {
-        moveGridTo(targetPos.row, targetPos.col);
-      }, 1250);
-
-      currentSection = section;
-    }, 500); // 500ms delay for smooth scroll
-    return;
+      moveGrid(pos.row, pos.col);
+      currentSection = sectionName;
+    }, 1250);
+  } else {
+    moveGrid(pos.row, pos.col);
+    currentSection = sectionName;
   }
-
-  // Move to intermediate filler position first (for transition effect)
-  const intermediatePos = fillerPositions[section];
-  if (intermediatePos) {
-    moveGridTo(intermediatePos.row, intermediatePos.col);
-  }
-
-  // Move to the final target section after a delay
-  setTimeout(() => {
-    moveGridTo(targetPos.row, targetPos.col);
-  }, 1250);
-
-  currentSection = section;
 }
 
 function updateViewportHeight() {
