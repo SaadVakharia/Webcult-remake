@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
 }
 
 .home-section .tablet {
@@ -86,6 +87,17 @@
   width: 5vw;
   background: transparent;
   filter: drop-shadow(-0.8vw -0.2vw 0.4vw rgba(0, 0, 0, 0.4));
+}
+
+.home-section .keyboard-container {
+  position: absolute;
+  bottom: -120px;
+  right: -460px;
+  width: 70%;
+  overflow: visible;
+  justify-content: center;
+  transform: rotate(-20deg);
+  z-index: 200;
 }
 
 @keyframes blink {

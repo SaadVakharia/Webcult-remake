@@ -10,6 +10,7 @@ const positions = {
   services: { row: 0, col: 4 },
   filler3: { row: 1, col: 0 },
   about: { row: 1, col: 1 },
+  filler4: { row: 1, col: 2 },
   contact: { row: 1, col: 3 },
   filler5: { row: 1, col: 4 },
 };
@@ -21,7 +22,7 @@ const fillerPositions = {
   home: positions.filler3,
   portfolio: positions.filler2,
   services: positions.filler5,
-  about: { row: positions.portfolio.row + 1, col: positions.portfolio.col },
+  about: positions.filler4,
   contact: positions.filler1,
 };
 
