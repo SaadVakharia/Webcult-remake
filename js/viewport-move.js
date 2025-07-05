@@ -49,13 +49,13 @@ function goTo(section) {
 
   const filler = fillerMap[sectionName];
   if (filler) {
-    moveGrid(filler.row, filler.col);
+    moveGridTo(filler.row, filler.col);
     setTimeout(() => {
-      moveGrid(pos.row, pos.col);
+      moveGridTo(pos.row, pos.col);
       currentSection = sectionName;
     }, 1250);
   } else {
-    moveGrid(pos.row, pos.col);
+    moveGridTo(pos.row, pos.col);
     currentSection = sectionName;
   }
 }
@@ -67,12 +67,18 @@ function updateViewportHeight() {
   // Realign grid to current section with new dimensions
   const pos = positions[currentSection.toLowerCase()];
   if (pos) {
-    moveGrid(pos.row, pos.col);
+    moveGridTo(pos.row, pos.col);
   }
 }
 
 window.addEventListener("resize", updateViewportHeight);
 window.addEventListener("orientationchange", updateViewportHeight);
+
+// Add this for zoom/viewport changes
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", updateViewportHeight);
+}
+
 updateViewportHeight(); // Call on load
 
 window.addEventListener("load", () => {
@@ -80,7 +86,7 @@ window.addEventListener("load", () => {
 });
 
 // Initial grid position based on current section
-moveGrid(positions.home.row, positions.home.col);
+moveGridTo(positions.home.row, positions.home.col);
 
 // Responsive menu slide-in/out for mobile
 document.addEventListener("DOMContentLoaded", () => {
