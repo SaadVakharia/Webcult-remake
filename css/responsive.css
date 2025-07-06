@@ -66,6 +66,10 @@
         cursor: default;
     }
 
+    .keyboard-container {
+        display: none;
+    }
+
     /* Optional: show a "tab" to click */
     .navigation-menu::before {
         content: "";

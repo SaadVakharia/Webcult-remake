@@ -10,6 +10,17 @@ window.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         document.getElementById(section).innerHTML = data;
         if (section === "home") startHomeAnimation();
+        if (section === "portfolio") {
+          // Initialize Swiper after portfolio HTML is loaded
+          const swiper = new Swiper('.portfolio-swiper', {
+            effect: 'cards',
+            grabCursor: true,
+            loop: true,
+            // Remove navigation arrows
+            navigation: false,
+            // Optional: add swipe callbacks for realism
+          });
+        }
       })
       .catch((err) => {
         console.error(err);
