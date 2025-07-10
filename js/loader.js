@@ -16,10 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
             effect: 'cards',
             grabCursor: true,
             loop: true,
-            // Remove navigation arrows
             navigation: false,
-            // Optional: add swipe callbacks for realism
           });
+          // Initialize flipbook after HTML is loaded
+          document.querySelectorAll(".book").forEach(flipBook);
         }
       })
       .catch((err) => {
