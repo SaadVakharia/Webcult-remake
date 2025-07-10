@@ -110,3 +110,33 @@
     hsl(231, 32%, 29%);
   color: hsl(200 30% 98%);
 }
+
+@media screen and (max-width: 933px) {
+  .book {
+    width: 28vw;
+    height: 50vh;
+    padding-top: 10vh;
+    padding-left: 12vw;
+  }
+}
+
+@media (max-width: 431px) {
+  .book {
+    width: 28vw;
+    height: 30vh;
+    padding-top: 16vh;
+    padding-left: 0vw;
+  }
+  .page {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-height: 431px) and (orientation: landscape){
+  .book {
+    width: 28vw;
+    height: 60vh;
+    padding-top: 6vh;
+    padding-left: 0;
+  }
+}
