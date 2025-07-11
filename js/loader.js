@@ -20,6 +20,11 @@ window.addEventListener("DOMContentLoaded", () => {
           });
           // Initialize flipbook after HTML is loaded
           document.querySelectorAll(".book").forEach(flipBook);
+
+          // Initialize portfolio cards for mobile
+          if (typeof initPortfolioCards === "function") {
+            initPortfolioCards();
+          }
         }
       })
       .catch((err) => {

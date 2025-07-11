@@ -111,6 +111,111 @@
   color: hsl(200 30% 98%);
 }
 
+.mobile.jumbled-cards {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
+  display: none;
+}
+
+.item-container.card {
+  position: absolute;
+  width: 54vw;
+  height: 18vh;
+  background: #fff;
+  box-shadow: 0 0.42vh 1.67vw rgba(0, 0, 0, 0.18), 0 0.08vh 0.42vw rgba(0, 0, 0, 0.10);
+  border: 0.05vw solid rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1),
+    left 0.4s cubic-bezier(0.4, 0.2, 0.2, 1),
+    top 0.4s cubic-bezier(0.4, 0.2, 0.2, 1),
+    z-index 0s;
+  cursor: pointer;
+  padding: 12px;
+  padding-bottom: 0;
+  background: #fff9f1;
+}
+
+.image-item {
+  width: 100%;
+  height: 75%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.image-title {
+  padding: 0.73vh 0.63vw 0.52vh 0.63vw;
+  font-size: 2.5vw;
+  background: #fff9f1;
+  text-align: center;
+  min-height: 2.6vh;
+  border-top: 0.05vw solid #f5e6d3;
+}
+
+.card1 {
+  top: 2vh;
+  left: 7vw;
+  z-index: 7;
+  transform: rotate(6deg);
+}
+
+.card2 {
+  top: 16vh;
+  left: 37vw;
+  z-index: 6;
+  transform: rotate(-4deg);
+}
+
+.card3 {
+  top: 28vh;
+  left: 7vw;
+  z-index: 5;
+  transform: rotate(0deg);
+}
+
+.card4 {
+  top: 40vh;
+  left: 37vw;
+  z-index: 4;
+  transform: rotate(10deg);
+}
+
+.card5 {
+  top: 52vh;
+  left: 7vw;
+  z-index: 3;
+  transform: rotate(-6deg);
+}
+
+.card6 {
+  top: 64vh;
+  left: 37vw;
+  z-index: 2;
+  transform: rotate(12deg);
+}
+
+.card7 {
+  top: 76vh;
+  left: 7vw;
+  z-index: 1;
+  transform: rotate(-10deg);
+}
+
+
 @media screen and (max-width: 933px) {
   .book {
     width: 28vw;
@@ -120,23 +225,28 @@
   }
 }
 
-@media (max-width: 431px) {
+@media (max-width: 435px) {
   .book {
-    width: 28vw;
-    height: 30vh;
-    padding-top: 16vh;
-    padding-left: 0vw;
+    display: none;
   }
-  .page {
-    font-size: 3vw;
+
+  .mobile.jumbled-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-@media screen and (max-height: 431px) and (orientation: landscape){
+@media screen and (max-height: 431px) and (orientation: landscape) {
   .book {
     width: 28vw;
     height: 60vh;
     padding-top: 6vh;
     padding-left: 0;
   }
+}
+
+.active-center {
+  transition: transform 0.3s, left 0.3s, top 0.3s, z-index 0.3s;
 }
