@@ -1,8 +1,7 @@
 // main.js
 window.addEventListener("DOMContentLoaded", () => {
   const sections = ["home", "portfolio", "services", "about", "contact"];
-
-  sections.forEach((section) => {
+  const fetchPromises = sections.map((section) =>
     fetch(`sections/html/${section}.html`)
       .then((res) =>
         res.ok ? res.text() : Promise.reject(`Failed to load ${section}.html`)
@@ -39,6 +38,10 @@ window.addEventListener("DOMContentLoaded", () => {
         console.error(err);
         const el = document.getElementById(section);
         if (el) el.innerHTML = `<p>Could not load ${section}</p>`;
-      });
+      })
+  );
+
+  Promise.all(fetchPromises).then(() => {
+    document.getElementById("loader").style.display = "none";
   });
 });
