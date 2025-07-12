@@ -71,7 +71,7 @@
   background: #EDEDED;
   border-radius: 2.4vw;
   border: 6px solid black;
-  outline: 3px solid silver;
+  outline: 3px solid rgb(218, 218, 218);
   box-shadow:
     -2vw -1vw 3vw hsla(0, 0%, 0%, 0.4),
     0 0 0 0.1vw hsl(0, 0%, 67%) inset;
@@ -91,14 +91,15 @@
 
 .home-section .keyboard-container {
   position: absolute;
-  bottom: -120px;
-  right: -460px;
+  bottom: -10vw;
+  right: -30vw;
   width: 70%;
   overflow: visible;
   justify-content: center;
-  transform: rotate(-20deg);
+  transform: rotate(-16deg);
   z-index: 200;
 }
+
 
 @keyframes blink {
   0% {
@@ -166,11 +167,12 @@
   }
 }
 
-@media screen and (max-height: 431px) and (orientation: landscape){
+@media screen and (max-height: 431px) and (orientation: landscape) {
   .home-section .tablet {
     margin-left: 0 !important;
   }
 }
+
 @media screen and (max-width: 933px) {
   .home-section {
     margin: 0;

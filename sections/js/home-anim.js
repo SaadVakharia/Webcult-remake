@@ -1,3 +1,4 @@
+// home-anim.js
 function startHomeAnimation() {
   const words = ["Build", "Create", "Design", "Code"];
   const colors = ["#151FDF", "#B40158", "#A33089", "#680993"];
@@ -36,3 +37,6 @@ function startHomeAnimation() {
 
   printChar(words[currentIndex], currentIndex);
 }
+
+// If you're not using modules, make it global
+window.startHomeAnimation = startHomeAnimation;
