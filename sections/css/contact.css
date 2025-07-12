@@ -44,7 +44,7 @@
 	background-position: center;
 }
 
-#loader {
+.mobile-screen #loader {
 	display: none;
 }
 
