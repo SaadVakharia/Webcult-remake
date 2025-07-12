@@ -66,28 +66,25 @@ body {
   background: none;
 }
 
-/* === NAV & FOOTER === */
-nav,
+/* === FOOTER === */
 footer {
   position: fixed;
   left: 0;
   width: 100%;
   z-index: 10;
   background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-}
-
-nav {
-  top: 0;
-  padding: 0.75rem 0.5rem;
-  font-size: 1.5vw;
-}
-
-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   bottom: 0;
   font-size: 2vh;
   color: white;
   padding: 0.5vw 0;
+}
+
+footer a {
+  color: white;
+  padding: 0 4px;
 }
 
 /* === LOADER === */
