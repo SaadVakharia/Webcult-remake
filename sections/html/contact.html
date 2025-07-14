@@ -9,16 +9,17 @@
         <form id="contact_form" class="form-style">
           <h2 class="formhead">Quick Contact</h2>
           <div id="contact_results"></div>
+          
           <div id="contact_body">
             <div class="input-icon-wrapper">
               <img src="asset/icons/user.png" class="input-icon" alt="icon" />
               <input
                 type="text"
                 placeholder="What is your name?"
-                name="name"
+                name="user_name"
                 class="name input-field"
                 id="name"
-                required="true"
+                required
               />
             </div>
             <div class="input-icon-wrapper">
@@ -26,9 +27,9 @@
               <input
                 type="email"
                 placeholder="What is your email?"
-                name="email"
+                name="user_email"
                 class="email input-field"
-                required="true"
+                required
               />
             </div>
             <div class="input-icon-wrapper">
@@ -49,11 +50,11 @@
             <div class="input-icon-wrapper">
               <img src="asset/icons/message.png" class="input-icon" alt="icon" />
               <textarea
-                name="message"
+                name="msg"
                 id="message"
                 placeholder="Please enter your message"
                 class="textarea-field"
-                required="true"
+                required
               ></textarea>
             </div>
             <input type="submit" id="submit_btn" value="Submit" class="btn" />

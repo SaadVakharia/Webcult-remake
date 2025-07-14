@@ -28,6 +28,9 @@
 
 .book a {
   color: inherit;
+  font-size: 54px;
+  display: block;
+  text-align: center;
 }
 
 .page {
@@ -58,6 +61,8 @@
   overflow: hidden;
   background-color: #fff;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-flow: column wrap;
   padding: 2em;
   border: 1px solid #0002;
