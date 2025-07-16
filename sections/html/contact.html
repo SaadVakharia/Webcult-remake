@@ -6,17 +6,17 @@
         <div class="spinner"></div>
       </div>
       <div id="contactform" style="position: relative">
-        <form id="contact_form" class="form-style">
+        <form id="contact-form" class="form-style" method="POST" action="">
           <h2 class="formhead">Quick Contact</h2>
           <div id="contact_results"></div>
-          
+
           <div id="contact_body">
             <div class="input-icon-wrapper">
               <img src="asset/icons/user.png" class="input-icon" alt="icon" />
               <input
                 type="text"
                 placeholder="What is your name?"
-                name="user_name"
+                name="name"
                 class="name input-field"
                 id="name"
                 required
@@ -27,13 +27,17 @@
               <input
                 type="email"
                 placeholder="What is your email?"
-                name="user_email"
+                name="email"
                 class="email input-field"
                 required
               />
             </div>
             <div class="input-icon-wrapper">
-              <img src="asset/icons/about-us.png" class="input-icon" alt="icon" />
+              <img
+                src="asset/icons/about-us.png"
+                class="input-icon"
+                alt="icon"
+              />
               <select id="selectopt" name="subject" class="select-field">
                 <option class="opt" default="default" value="">
                   Inquiry Regarding?
@@ -48,9 +52,13 @@
               </select>
             </div>
             <div class="input-icon-wrapper">
-              <img src="asset/icons/message.png" class="input-icon" alt="icon" />
+              <img
+                src="asset/icons/message.png"
+                class="input-icon"
+                alt="icon"
+              />
               <textarea
-                name="msg"
+                name="message"
                 id="message"
                 placeholder="Please enter your message"
                 class="textarea-field"
@@ -121,4 +129,3 @@
     </section>
   </div>
 </div>
-

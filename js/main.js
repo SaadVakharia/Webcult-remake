@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
           case "contact":
             if (typeof initContactSwatches === "function")
               initContactSwatches();
+            if (typeof initContactForm === "function") initContactForm();
             break;
           case "services":
             // Initialize services section if needed
