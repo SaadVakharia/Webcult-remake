@@ -1,0 +1,146 @@
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sticky-notes {
+  position: relative;
+  top: -2vw;
+  display: flex;
+  margin-left: 12%;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.sticky-note {
+  padding: 3vw;
+  background-image: url('../../asset/images/about/sticky-notes.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 0;
+}
+
+.sticky-header h2 {
+  font-size: 1.4vw;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sticky-body p {
+  padding-left: 4vw;
+  padding-right: 4vw;
+  text-align: center;
+  margin-top: 0.5vw;
+}
+
+.sticky-body {
+  padding-left: 0.6vw;
+  font-size: 1vw;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sticky-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: row;
+  }
+
+  .sticky-note:nth-child(5) {
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
+
+  .sticky-note {
+    padding: 4vw;
+    min-width: 80%;
+    width: max-content;
+  }
+
+  .sticky-header h2 {
+    font-size: 1.6vw;
+  }
+
+  .sticky-body p {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sticky-notes {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    margin: 0;
+  }
+
+  .sticky-note {
+    padding: 5vw;
+    min-width: 90%;
+    width: max-content;
+  }
+
+  .sticky-header h2 {
+    font-size: 3.8vw;
+  }
+
+  .sticky-body p {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    font-size: 2.6vw;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .sticky-notes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: row;
+  }
+
+  .sticky-note:nth-child(5) {
+    grid-column: 2 / span 2;
+    justify-self: center;
+  }
+
+  .sticky-note {
+    padding: 5vh;
+    min-width: 90%;
+    width: max-content;
+  }
+
+  .sticky-header h2 {
+    font-size: 3.8vh;
+  }
+
+  .sticky-body p {
+    padding-left: 4vh;
+    padding-right: 4vh;
+    font-size: 2.6vh;
+  }
+}

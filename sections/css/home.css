@@ -160,16 +160,18 @@
     gap: 2vh;
   }
 
-  .keyboard {
-    scale: 1.8 !important;
-    bottom: 16vh !important;
-    right: -16vw !important;
+  .home-section .keyboard-container {
+    display: none;
   }
 }
 
 @media screen and (max-height: 431px) and (orientation: landscape) {
   .home-section .tablet {
     margin-left: 0 !important;
+  }
+
+  .home-section .keyboard-container {
+    display: none;
   }
 }
 
