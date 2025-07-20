@@ -1,0 +1,60 @@
+<div class="services-section">
+  <div class="folder-container">
+    <div class="folder-tab"></div>
+    <div class="folder-back"></div>
+    <div class="paper" id="services-main">
+      <h2 class="paper-title">Our Services</h2>
+      <div class="services">
+        <div class="service" data-service="web-dev">
+          <div class="service-header">Web Development</div>
+        </div>
+        <div class="service" data-service="seo">
+          <div class="service-header">SEO Optimization</div>
+        </div>
+        <div class="service" data-service="app-dev">
+          <div class="service-header">App Development</div>
+        </div>
+        <div class="service" data-service="ui-ux">
+          <div class="service-header">UI/UX Design</div>
+        </div>
+        <div class="service" data-service="hosting">
+          <div class="service-header">Hosting</div>
+        </div>
+        <div class="service" data-service="consulting">
+          <div class="service-header">IT Consulting</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Service Details Paper - slides in from the right -->
+    <div class="service-details" id="service-details">
+      <div class="service-details-header">
+        <button class="back-button" id="back-button">←</button>
+        <h2 class="service-details-title" id="service-title"></h2>
+        <div></div> <!-- Spacer for flexbox alignment -->
+      </div>
+      <div class="service-details-content" id="service-content">
+        <!-- Content will be populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Remove DOMContentLoaded wrapper since content is loaded dynamically
+  const services = document.querySelectorAll(".service");
+
+  services.forEach((service) => {
+    service.addEventListener("click", function () {
+      const isActive = this.classList.contains("active");
+
+      // Close all other services
+      services.forEach((s) => s.classList.remove("active"));
+
+      // Toggle current service
+      if (!isActive) {
+        this.classList.add("active");
+      }
+    });
+  });
+</script>

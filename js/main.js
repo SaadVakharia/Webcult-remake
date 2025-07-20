@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
             if (typeof initContactForm === "function") initContactForm();
             break;
           case "services":
-            // Initialize services section if needed
+            if (typeof initServices === "function") initServices();
             break;
           case "about":
             // Initialize about section if needed
