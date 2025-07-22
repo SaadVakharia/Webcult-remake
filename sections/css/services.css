@@ -1,16 +1,16 @@
 .laptop {
-  font-family: 'Segoe UI', sans-serif;
-  margin-left: 10%;
-  margin-top: 5%;
-  width: 40%;
-  height: 90%;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #2d2d2d, #1f1f1f);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Tahoma, Geneva, sans-serif;
+  margin-left: 10vw;
+  margin-top: 5vw;
+  width: 40vw;
+  height: 90vh;
+  border-radius: 1.2vw;
+  background: linear-gradient(145deg, #3b3b3b, #2f2f2f);
+  box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.6), inset 0 -0.2vw 0.4vw rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 2px solid #1c1c1c;
+  border: 0.2vw solid #1c1c1c;
   position: relative;
   z-index: 1000;
   scale: 1.2;
@@ -23,82 +23,79 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #1a1a1a;
-  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 0.2vw solid #1a1a1a;
+  box-shadow: inset 0 -0.2vw 0.4vw rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
 .bezel {
   width: 95%;
-  height: 88%;
+  height: 87%;
   background-image: url('../../asset/images/services/laptop-wallpaper.jpg');
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-  ;
-  border: 6px solid #0f0f0f;
+  box-shadow: inset 0 0 1vw rgba(0, 0, 0, 0.5);
+  border: 0.6vw solid #0f0f0f;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  border-radius: 0.8vw;
 }
 
 .camera {
-  width: 8px;
-  height: 8px;
+  width: 0.6vw;
+  height: 0.6vw;
   background: radial-gradient(circle, #444, #000);
   border-radius: 50%;
-  margin-top: -13px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  margin-top: -1.2vw;
+  box-shadow: 0 0 0.3vw rgba(0, 0, 0, 0.8);
 }
 
 .display {
-  margin-top: 20px;
+  margin-top: 2vh;
   text-align: center;
   color: white;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0.1vw 0.2vw rgba(255, 255, 255, 0.5);
 }
 
 .display h3 {
   margin: 0;
-  font-size: 24px;
+  font-size: 2.4vh;
 }
 
 .display p {
-  font-size: 12px;
-  margin-top: 4px;
+  font-size: 1.2vh;
+  margin-top: 0.4vh;
 }
 
 /* Keyboard Area */
 .keyboard {
   flex: 1;
   background: linear-gradient(145deg, #3b3b3b, #2f2f2f);
-  max-height: 38%;
-  padding: 16px;
+  max-height: 31%;
+  padding: 2vw;
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-  border-top: 2px solid #1a1a1a;
   position: relative;
 }
 
 .key-row {
   display: flex;
-  gap: 8px;
+  gap: 0.8vw;
   justify-content: center;
 }
 
 .key {
-  width: 28px;
-  height: 28px;
+  width: 1.8vw;
+  height: 1.8vw;
   background: linear-gradient(145deg, #5e5e5e, #4a4a4a);
-  border-radius: 2px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(255, 255, 255, 0.1);
+  border-radius: 0.2vw;
+  box-shadow: inset 0 0.2vw 0.4vw rgba(0, 0, 0, 0.6), 0 0.2vw 0.4vw rgba(255, 255, 255, 0.1);
   transition: transform 0.1s ease, background 0.2s ease;
 }
 
@@ -107,25 +104,25 @@
 }
 
 .key-wide {
-  width: 64px;
+  width: 3.4vw;
 }
 
 .key-extra-wide {
-  width: 160px;
+  width: 16vw;
 }
 
 .key:active {
-  transform: translateY(4px);
+  transform: translateY(0.4vw);
   background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
 }
 
 .trackpad {
-  width: 120px;
-  height: 80px;
+  width: 12vw;
+  height: 8vh;
   background: linear-gradient(145deg, #4d4d4d, #3d3d3d);
-  border-radius: 8px;
-  margin-top: 12px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0.8vw;
+  margin-top: 1.2vh;
+  box-shadow: inset 0 0.2vw 0.4vw rgba(0, 0, 0, 0.3), 0 0.2vw 0.4vw rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
@@ -144,14 +141,14 @@
 .services-list {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0;
-  font-size: 14px;
+  margin: 1vh 0 0;
+  font-size: 1.4vh;
   line-height: 1.5;
   text-align: center;
 }
 
 .services-list li {
-  margin: 4px 0;
+  margin: 0.4vh 0;
 }
 
 .services-list li:hover {
@@ -160,14 +157,14 @@
 
 .app-window {
   position: absolute;
-  top: 60px;
+  top: 6vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  max-height: 70%;
+  width: 30vw;
+  max-height: 70vh;
   background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 0.6vw;
+  box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.5);
   display: none;
   flex-direction: column;
   overflow: hidden;
@@ -177,8 +174,8 @@
 .app-header {
   background: #2d2d2d;
   color: #fff;
-  padding: 8px 12px;
-  font-size: 14px;
+  padding: 0.8vh 1.2vw;
+  font-size: 1.4vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -188,13 +185,13 @@
   background: transparent;
   color: white;
   border: none;
-  font-size: 16px;
+  font-size: 1.6vh;
   cursor: pointer;
 }
 
 .app-content {
-  padding: 16px;
-  font-size: 14px;
+  padding: 1.6vh;
+  font-size: 1.4vh;
   color: #111;
   overflow-y: auto;
 }
@@ -204,12 +201,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 2vw;
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 2vh 0;
   position: relative;
-  bottom: -10%;
+  bottom: -15%;
   scale: 0.85;
 }
 
@@ -218,7 +215,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 22%;
+  width: 8vw;
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -226,21 +223,81 @@
 
 /* Example for other sections */
 .services-grid li img {
-  width: 64px;
-  height: 64px;
+  width: 4.4vw;
+  height: 4.4vw;
   transition: transform 0.3s ease;
 }
 
 .services-grid li:hover img {
-  transform: scale(1.1);
-  /* Slightly enlarge on hover */
+  transform: scale(1.05);
 }
 
 .services-grid li span {
-  font-size: 1rem;
-  color: #ddd;
+  font-size: 0.8vw;
 }
 
 .services-grid li:hover {
   transform: scale(1.1);
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .laptop {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .laptop {
+    margin-left: 0;
+    width: 74vw;
+    height: 50vh;
+  }
+
+  .keyboard {
+    max-height: 36%;
+  }
+
+  .key-row {
+    scale: 1.8;
+  }
+
+  .trackpad {
+    width: 20vw;
+    height: 6vh;
+  }
+
+  .display h3 {
+    font-size: 1.8vh;
+  }
+
+  .services-grid {
+    bottom: -5%;
+  }
+
+  .services-grid li {
+    width: 16vw;
+  }
+
+  .services-grid li img {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .services-grid li span {
+    font-size: 2.2vw;
+  }
+
+  .app-window {
+    width: 55vw;
+    max-height: 16vh;
+  }
+
+  .app-header {
+    font-size: 1.1vh;
+  }
+
+  .app-content {
+    padding: 0 1vh;
+    font-size: 1vh;
+  }
 }
