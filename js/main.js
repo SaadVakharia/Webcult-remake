@@ -45,4 +45,11 @@ window.addEventListener("DOMContentLoaded", () => {
   Promise.all(fetchPromises).then(() => {
     document.getElementById("loader").style.display = "none";
   });
+
+  // Add a keydown event listener to handle the Tab key
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") {
+      e.preventDefault(); // Prevent default tab behavior (focus change)
+    }
+  });
 });

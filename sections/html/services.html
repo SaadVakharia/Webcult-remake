@@ -1,60 +1,108 @@
-<div class="services-section">
-  <div class="folder-container">
-    <div class="folder-tab"></div>
-    <div class="folder-back"></div>
-    <div class="paper" id="services-main">
-      <h2 class="paper-title">Our Services</h2>
-      <div class="services">
-        <div class="service" data-service="web-dev">
-          <div class="service-header">Web Development</div>
-        </div>
-        <div class="service" data-service="seo">
-          <div class="service-header">SEO Optimization</div>
-        </div>
-        <div class="service" data-service="app-dev">
-          <div class="service-header">App Development</div>
-        </div>
-        <div class="service" data-service="ui-ux">
-          <div class="service-header">UI/UX Design</div>
-        </div>
-        <div class="service" data-service="hosting">
-          <div class="service-header">Hosting</div>
-        </div>
-        <div class="service" data-service="consulting">
-          <div class="service-header">IT Consulting</div>
-        </div>
+<div class="laptop">
+  <div class="screen">
+    <div class="bezel">
+      <div class="camera"></div>
+      <div class="display">
+        <h3>Our Services</h3>
+        <ul class="services-grid">
+          <li onclick="openApp('ecommerce')">
+            <img src="../../asset/images/services/icons/ecommerce.png" alt="E-commerce Icon" />
+            <span>E-commerce Solutions</span>
+          </li>
+          <li onclick="openApp('webapps')">
+            <img src="../../asset/images/services/icons/web-apps.png" alt="Web Apps Icon" />
+            <span>Web Apps</span>
+          </li>
+          <li onclick="openApp('crm')">
+            <img src="../../asset/images/services/icons/crm.png" alt="CRM Icon" />
+            <span>CRM</span>
+          </li>
+          <li onclick="openApp('erp')">
+            <img src="../../asset/images/services/icons/erp.png" alt="ERP Icon" />
+            <span>ERP</span>
+          </li>
+          <li onclick="openApp('mobile')">
+            <img src="../../asset/images/services/icons/mobile-app.png" alt="Mobile Apps Icon" />
+            <span>Mobile Apps</span>
+          </li>
+          <li onclick="openApp('websites')">
+            <img src="../../asset/images/services/icons/website.png" alt="Websites Icon" />
+            <span>Websites</span>
+          </li>
+          <li onclick="openApp('marketing')">
+            <img src="../../asset/images/services/icons/marketing.png" alt="Digital Marketing Icon" />
+            <span>Digital Marketing</span>
+          </li>
+          <li onclick="openApp('seo')">
+            <img src="../../asset/images/services/icons/seo.png" alt="SEO Icon" />
+            <span>SEO</span>
+          </li>
+        </ul>
       </div>
-    </div>
-    
-    <!-- Service Details Paper - slides in from the right -->
-    <div class="service-details" id="service-details">
-      <div class="service-details-header">
-        <button class="back-button" id="back-button">←</button>
-        <h2 class="service-details-title" id="service-title"></h2>
-        <div></div> <!-- Spacer for flexbox alignment -->
-      </div>
-      <div class="service-details-content" id="service-content">
-        <!-- Content will be populated by JavaScript -->
+      <div class="app-window" id="appWindow">
+        <div class="app-header">
+          <span id="appTitle">App Title</span>
+          <button class="close-btn" onclick="closeApp()">✕</button>
+        </div>
+        <div class="app-content" id="appContent">
+          <!-- Dynamic content will be injected here -->
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="keyboard">
+    <!-- Row 1 -->
+    <div class="key-row">
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key key-wide"></div>
+    </div>
+    <!-- Row 2 -->
+    <div class="key-row">
+      <div class="key key-wide"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key key-wide"></div>
+    </div>
+    <!-- Row 3 -->
+    <div class="key-row">
+      <div class="key key-wide"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key"></div>
+      <div class="key key-wide"></div>
+    </div>
+    <!-- Row 4 -->
+    <div class="key-row">
+      <div class="key key-wide"></div>
+      <div class="key key-wide"></div>
+      <div class="key key-extra-wide"></div>
+      <div class="key key-wide"></div>
+      <div class="key key-wide"></div>
+    </div>
+    <!-- Trackpad -->
+    <div class="trackpad"></div>
+  </div>
 </div>
-
-<script>
-  // Remove DOMContentLoaded wrapper since content is loaded dynamically
-  const services = document.querySelectorAll(".service");
-
-  services.forEach((service) => {
-    service.addEventListener("click", function () {
-      const isActive = this.classList.contains("active");
-
-      // Close all other services
-      services.forEach((s) => s.classList.remove("active"));
-
-      // Toggle current service
-      if (!isActive) {
-        this.classList.add("active");
-      }
-    });
-  });
-</script>
