@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
 /* === RESET === */
 html,
@@ -120,7 +119,7 @@ footer a {
 #loader .loader-text {
   display: block;
   margin-top: 2vh;
-  font-family: 'Playwrite AU SA', cursive;
+  font-family: "Shadows Into Light Two", cursive;
   font-size: 2vw;
   font-weight: bold;
   color: #c10d4d;

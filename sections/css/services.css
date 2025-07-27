@@ -31,7 +31,7 @@
 .bezel {
   width: 95%;
   height: 87%;
-  background-image: url('../../asset/images/services/laptop-wallpaper.jpg');
+  background-image: url('../../asset/images/services/laptop-wallpaper.webp');
   background-size: cover;
   background-position: center;
   box-shadow: inset 0 0 1vw rgba(0, 0, 0, 0.5);

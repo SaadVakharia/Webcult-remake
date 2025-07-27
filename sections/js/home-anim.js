@@ -1,9 +1,14 @@
 // home-anim.js
 function startHomeAnimation() {
-  const words = ["Build", "Create", "Design", "Code"];
+  const words = ["design", "develop", "execute", "deliver"];
   const colors = ["#151FDF", "#B40158", "#A33089", "#680993"];
   const text = document.querySelector("#home .text");
   if (!text) return;
+  
+  // Explicitly clear all content including whitespace
+  text.innerHTML = "";
+  text.textContent = "";
+  
   let currentIndex = 0;
 
   function printChar(word, colorIndex) {
