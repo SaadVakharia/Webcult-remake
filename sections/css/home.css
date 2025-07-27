@@ -152,8 +152,15 @@
     height: 32vw;
   }
 
+  .tablet-screen h3 {
+    font-size: 3.2vw;
+    width: 90%;
+  }
+
   .home-section h1 {
-    font-size: 4vw;
+    font-size: 6vw;
+    width: 90%;
+    text-align: center;
   }
 
   .home-section .tablet .stylus img {
@@ -165,7 +172,7 @@
   .home-section .tablet .tablet-screen {
     width: 75vw;
     height: 57vh;
-    gap: 2vh;
+    gap: 8vh;
   }
 
   .home-section .keyboard-container {
