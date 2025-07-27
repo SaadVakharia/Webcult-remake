@@ -175,9 +175,13 @@
     gap: 8vh;
   }
 
+
   .home-section .keyboard-container {
-    display: none;
+    bottom: -25vw;
+    right: 25vw;
+    scale: 0.6;
   }
+
 }
 
 @media screen and (max-height: 431px) and (orientation: landscape) {
@@ -186,7 +190,9 @@
   }
 
   .home-section .keyboard-container {
-    display: none;
+    bottom: -20vw;
+    right: -15vw;
+    scale: 0.8;
   }
 }
 
