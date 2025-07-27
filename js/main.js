@@ -42,8 +42,47 @@ window.addEventListener("DOMContentLoaded", () => {
       })
   );
 
+  // Wait for HTML content to load first
   Promise.all(fetchPromises).then(() => {
-    document.getElementById("loader").style.display = "none";
+    // Now wait for all images to load
+    const images = document.querySelectorAll('img');
+    const imagePromises = Array.from(images).map(img => {
+      return new Promise((resolve) => {
+        if (img.complete) {
+          resolve();
+        } else {
+          img.onload = resolve;
+          img.onerror = resolve; // Still resolve on error to avoid hanging
+        }
+      });
+    });
+
+    // Also wait for background images in CSS
+    const elementsWithBgImages = document.querySelectorAll('[style*="background-image"], .cell, .mobile-screen, .bezel');
+    const bgImagePromises = Array.from(elementsWithBgImages).map(el => {
+      return new Promise((resolve) => {
+        const computedStyle = window.getComputedStyle(el);
+        const bgImage = computedStyle.backgroundImage;
+        
+        if (bgImage && bgImage !== 'none' && bgImage.includes('url(')) {
+          const url = bgImage.slice(4, -1).replace(/["']/g, "");
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = resolve;
+          img.src = url;
+        } else {
+          resolve();
+        }
+      });
+    });
+
+    // Wait for all images and background images to load
+    Promise.all([...imagePromises, ...bgImagePromises]).then(() => {
+      // Add a small delay for smooth transition
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+      }, 500);
+    });
   });
 
   // Add a keydown event listener to handle the Tab key
