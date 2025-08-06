@@ -26,14 +26,15 @@
 }
 
 .tablet-screen h3 {
-  font-size: 1.2vw;
+  font-size: 1.6vw;
   text-align: center;
   color: #333333;
-  width: 50%;
+  width: 80%;
 }
 
 .home-section h1 {
   font-size: 3vw;
+  margin: 0;
   color: #333333;
 }
 
@@ -110,14 +111,14 @@
 
 .pot-container {
   position: absolute;
-  bottom: 2vw;
-  left: 6vw;
+  bottom: -10vw;
+  left: -6vw;
   z-index: 100;
 }
 
 .pot img {
-  width: 14vw;
-  height: 14vw;
+  width: 24vw;
+  height: 24vw;
   filter: drop-shadow(-1.4vw 1.2vw 1.5vw rgba(0, 0, 0, 0.6));
 }
 
@@ -189,13 +190,13 @@
   }
 
   .pot-container {
-    left: 4vw;
-    top: 4vw;
+    left: -8vw;
+    top: -8vw;
   }
 
   .pot img {
-    width: 28vw;
-    height: 28vw;
+    width: 52vw;
+    height: 52vw;
     filter: drop-shadow(-1.4vw 1.2vw 1.5vw rgba(0, 0, 0, 0.6));
   }
 
@@ -217,9 +218,7 @@
     right: -15vw;
     scale: 0.8;
   }
-  .pot-container {
-    left: 2vw;
-  }
+
   .pot img {
     scale: 0.8;
   }
