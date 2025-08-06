@@ -1,6 +1,5 @@
-// main.js
 window.addEventListener("DOMContentLoaded", () => {
-  const sections = ["home", "portfolio", "services", "about", "contact"];
+  const sections = ["home", "portfolio", "services", "about", "contact", "home-filler", "portfolio-filler", "services-filler", "about-filler", "contact-filler"];
   const fetchPromises = sections.map((section) =>
     fetch(`sections/html/${section}.html`)
       .then((res) =>

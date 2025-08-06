@@ -4,26 +4,30 @@ const viewport = document.getElementById("viewport");
 // Map section names to 5x2 grid positions
 const positions = {
   home: { row: 0, col: 0 },
-  filler1: { row: 0, col: 1 },
+  homeFiller: { row: 1, col: 0 },
+
   portfolio: { row: 0, col: 2 },
-  filler2: { row: 0, col: 3 },
+  portfolioFiller: { row: 0, col: 3 },
+
   services: { row: 0, col: 4 },
-  filler3: { row: 1, col: 0 },
+  servicesFiller: { row: 1, col: 4 },
+
   about: { row: 1, col: 1 },
-  filler4: { row: 1, col: 2 },
+  aboutFiller: { row: 1, col: 2 },
+  
   contact: { row: 1, col: 3 },
-  filler5: { row: 1, col: 4 },
+  contactFiller: { row: 0, col: 1 },
 };
 
 let currentSection = "home";
 
 // Maps section names to their corresponding filler positions
-const fillerPositions = {
-  home: positions.filler3,
-  portfolio: positions.filler2,
-  services: positions.filler5,
-  about: positions.filler4,
-  contact: positions.filler1,
+const fillerMap = {
+  home: positions.homeFiller,
+  portfolio: positions.portfolioFiller,
+  services: positions.servicesFiller,
+  about: positions.aboutFiller,
+  contact: positions.contactFiller
 };
 
 // Move the grid to a specific row and column
@@ -38,15 +42,6 @@ function goTo(section) {
   const sectionName = section.toLowerCase();
   const pos = positions[sectionName];
   if (!pos || currentSection === sectionName) return;
-
-  // Map section names to their filler position objects directly
-  const fillerMap = {
-    home: positions.filler3,
-    portfolio: positions.filler2,
-    services: positions.filler5,
-    about: positions.filler4,
-    contact: positions.filler1,
-  };
 
   const filler = fillerMap[sectionName];
   if (filler) {
@@ -87,7 +82,7 @@ window.addEventListener("load", () => {
 });
 
 // Initial grid position based on current section
-moveGridTo(positions.home.row, positions.home.col);
+moveGridTo(positions.aboutFiller.row, positions.aboutFiller.col);
 
 // Responsive menu slide-in/out for mobile
 document.addEventListener("DOMContentLoaded", () => {
