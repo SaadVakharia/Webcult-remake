@@ -2,13 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-direction: column;
+  margin-left: 12%;
 }
 
 .sticky-notes {
   position: relative;
-  top: -2vw;
+  top: -6vw;
   display: flex;
-  margin-left: 12%;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
@@ -26,14 +27,80 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  scale: 0.9;
   gap: 0;
 }
 
+.wide {
+  margin-top: 2vw;
+  justify-self: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  min-width: 30vw;
+}
+
+.wide .sticky-body {
+  max-width: 60%;
+  min-height: 10vw;
+}
+
+.wide .sticky-body p {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .sticky-header h2 {
-  font-size: 1.4vw;
-  color: #333;
+  font-size: 2vw;
+  font-family: "Indie Flower", cursive;
+  letter-spacing: 0.4vw;
+  font-weight: bold;
+  color: #000000;
   text-align: center;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+}
+
+.sticky-header h2 i {
+  font-size: 1.4vw;
+  color: #c10d4d;
+  font-style: normal;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+/* Replace these paths with your actual PNG file paths */
+
+.sticky-icon {
+  width: 3vw;
+  height: 3vw;
+}
+
+.icon-about {
+  background-image: url("../../asset/icons/about-us.png");
+}
+
+.icon-values {
+  background-image: url('../../asset/icons/favourite.png');
+}
+
+.icon-vision {
+  background-image: url('../../asset/icons/vision.png');
+}
+
+/* Remove the ::before pseudo-elements */
+.icon-about::before,
+.icon-values::before,
+.icon-vision::before {
+  content: none;
 }
 
 .sticky-body p {
@@ -44,16 +111,41 @@
 }
 
 .sticky-body {
-  padding-left: 0.6vw;
-  font-size: 1vw;
-  color: #555;
-  line-height: 1.4;
+  padding-bottom: 2vw;
   margin: 0;
+  max-width: 28vw;
+  font-size: 1.5vw;
+  font-family: "Indie Flower", cursive;
+  color: #343434;
+  line-height: 1.4;
   display: flex;
   flex-direction: column;
   gap: 0;
   align-items: center;
   justify-content: center;
+}
+
+.clips-container {
+  position: absolute;
+  bottom: -2vw;
+  left: -4vw;
+}
+
+.clips-container img {
+  width: 20vw;
+  filter: drop-shadow(0.2vw 0.2vw 0.1vw rgba(0, 0, 0, 0.4));
+}
+
+.tape-container {
+  position: absolute;
+  right: -8vw;
+  top: -10vw;
+  z-index: 100;
+}
+
+.tape-container img {
+  width: 22vw;
+  filter: drop-shadow(-0.4vw 0.2vw 1vw rgba(0, 0, 0, 0.7));
 }
 
 @media (max-width: 768px) {
@@ -79,11 +171,16 @@
     font-size: 1.6vw;
   }
 
+  .sticky-header h2 i {
+    font-size: 1.4vw;
+  }
+
   .sticky-body p {
     padding-left: 1vw;
     padding-right: 1vw;
     font-size: 1.2vw;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -108,6 +205,10 @@
     font-size: 3.8vw;
   }
 
+  .sticky-header h2 i {
+    font-size: 3.2vw;
+  }
+
   .sticky-body p {
     padding-left: 4vw;
     padding-right: 4vw;
@@ -115,7 +216,7 @@
   }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 768px) {
   .sticky-notes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -123,24 +224,23 @@
     grid-auto-flow: row;
   }
 
-  .sticky-note:nth-child(5) {
-    grid-column: 2 / span 2;
-    justify-self: center;
-  }
-
   .sticky-note {
     padding: 5vh;
-    min-width: 90%;
+    min-width: 80%;
     width: max-content;
   }
 
   .sticky-header h2 {
-    font-size: 3.8vh;
+    font-size: 2.8vh;
+  }
+
+  .sticky-header h2 i {
+    font-size: 2.4vh;
   }
 
   .sticky-body p {
-    padding-left: 4vh;
-    padding-right: 4vh;
-    font-size: 2.6vh;
+    padding-left: 0vh;
+    padding-right: 0vh;
+    font-size: 1.8vh;
   }
 }
