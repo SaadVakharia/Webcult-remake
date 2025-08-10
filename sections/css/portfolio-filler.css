@@ -1,0 +1,73 @@
+.lamp-container {
+    position: absolute;
+    left: 0;
+    top: -30vw;
+    z-index: 100;
+}
+
+.lamp-container img {
+    width: 46vw;
+    height: auto;
+    rotate: 20deg;
+    filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.6));
+}
+
+.pen-holder-container {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+.pen-holder-container img {
+    width: 22vw;
+    height: auto;
+    filter: drop-shadow(-0.8vw 1vw 0.5vw rgba(0, 0, 0, 0.7));
+}
+
+.files-container {
+    position: absolute;
+    right: -10vw;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.files-container img {
+    width: 46vw;
+    height: auto;
+    rotate: -20deg;
+    filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.9));
+}
+
+@media (max-width: 435px) {
+    .lamp-container {
+        left: 0;
+        top: -20vh;
+    }
+
+    .lamp-container img {
+        width: 40vh;
+        rotate: 40deg;
+    }
+
+    .pen-holder-container {
+        left: 30%;
+        top: 80%;
+    }
+
+    .pen-holder-container img {
+        width: 24vh;
+        rotate: 40deg;
+    }
+
+    .files-container {
+        right: -10vw;
+        top: 55%;
+        transform: translate(0, -50%);
+    }
+
+    .files-container img {
+        width: 42vh;
+        rotate: -40deg;
+    }
+}
