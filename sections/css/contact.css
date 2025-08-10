@@ -5,6 +5,11 @@
     height: 100vh;
 }
 
+.contact p span a {
+    display: block;
+    text-decoration: none !important;
+}
+
 .mobile-mockup {
     position: absolute;
     transform: translateX(-87%);
@@ -594,10 +599,6 @@
         transform: translateX(-55%);
     }
 
-    .card-container {
-        display: none;
-    }
-
     .mobile-notch {
         width: 14vw;
         height: 2.5vw;
@@ -645,38 +646,6 @@
         font-size: 2.8vw;
     }
 
-    #social-icons {
-        left: 50%;
-        top: 15%;
-    }
-
-    .sb-container {
-        width: 18vw;
-        height: 12vh;
-        margin: 3vw auto 0 auto;
-    }
-
-    .sb-container div {
-        width: 20vw;
-        height: 32vw;
-    }
-
-    .sb-container div h4 {
-        font-size: 3vw;
-        margin: 1vw;
-        padding: 1vw;
-    }
-
-    .sb-container div:last-child {
-        background-size: 12vw 12vw;
-    }
-
-    .sb-container div:last-child:after {
-        bottom: 1.5vw;
-        left: 1.5vw;
-        width: 2.5vw;
-        height: 2.5vw;
-    }
 }
 
 /* Mobile Landscape (480px - 768px) */
@@ -756,11 +725,11 @@
         outline: 0.5vw solid rgb(218, 218, 218);
         border-radius: 5vw;
         left: 60%;
-        top: 12%;
+        top: 15%;
         scale: 1.5;
     }
 
-    .card-container {
+    #social-icons {
         display: none;
     }
 
@@ -811,11 +780,6 @@
         font-size: 3.5vw;
     }
 
-    #social-icons {
-        left: 0%;
-        top: 65%;
-    }
-
     .main {
         text-align: center;
         padding-left: 6vw;
@@ -832,32 +796,10 @@
         padding: 1.5vw;
     }
 
-    .sb-container {
-        width: 22vw;
-        height: 18vh;
-        margin: 4vw auto 0 auto;
-    }
-
-    .sb-container div {
-        width: 25vw;
-        height: 40vw;
-    }
-
-    .sb-container div h4 {
-        font-size: 4vw;
-        margin: 1.5vw;
-        padding: 1.5vw;
-    }
-
-    .sb-container div:last-child {
-        background-size: 15vw 15vw;
-    }
-
-    .sb-container div:last-child:after {
-        bottom: 2vw;
-        left: 2vw;
-        width: 3vw;
-        height: 3vw;
+    .card-container {
+        bottom: 6vw;
+        right: -9vw;
+        padding: 6vw 8vw;
     }
 }
 
