@@ -4,6 +4,9 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php'; // Composer autoload
 
+// Load email configuration
+$emailConfig = require 'email-config.php';
+
 // Ensure the request is an AJAX POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
@@ -42,18 +45,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = new PHPMailer(true);
 
     try {
-        // Server settings
+        // Server settings using config
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'shabnam.naviwala@gmail.com';       // Your Gmail
-        $mail->Password = 'ecsejcindorcvrsw';                  // Gmail App Password
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+        $mail->Host = $emailConfig['smtp_host'];
+        $mail->SMTPAuth = $emailConfig['smtp_auth'];
+        $mail->Username = $emailConfig['smtp_username'];
+        $mail->Password = $emailConfig['smtp_password'];
+        $mail->SMTPSecure = $emailConfig['smtp_secure'];
+        $mail->Port = $emailConfig['smtp_port'];
 
-        // Recipients
-        $mail->setFrom('shabnam.naviwala@gmail.com', 'Contact Form');
-        $mail->addAddress('shabnam.naviwala@gmail.com');       // Your receiving email
+        // Recipients using config
+        $mail->setFrom($emailConfig['from_email'], $emailConfig['from_name']);
+        $mail->addAddress($emailConfig['to_email']);
 
         // Content
         $mail->Subject = $subject;
