@@ -293,6 +293,75 @@
     box-shadow: 0 0.05vw 0.05vw rgba(255, 255, 255, 0.1);
 }
 
+.card-container {
+    position: absolute;
+    bottom: 3vw;
+    right: 2vw;
+    display: flex;
+    border: 0.1vw solid #ddd;
+    padding: 4vw 2vw;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    scale: 0.8;
+    filter: drop-shadow(-0.5vw 0.5vw 0.5vw rgba(0, 0, 0, 0.5));
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+    border-right: 2px solid red;
+}
+
+.logo-section img {
+    max-width: 150px;
+    height: auto;
+}
+
+.info-section {
+    flex: 1;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.name span {
+    color: #1a33ff;
+}
+
+.title {
+    font-family: 'Brush Script MT', cursive;
+    color: #ff0000;
+    font-size: 1.2rem;
+    margin-top: 4px;
+}
+
+.contact {
+    margin-top: 20px;
+}
+
+.contact p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.contact strong {
+    color: #ff0000;
+}
+
+.contact span {
+    color: #1a33ff;
+}
+
 /* === RESPONSIVE DESIGN === */
 
 /* Laptop/Desktop (1024px - 1440px) */
@@ -355,6 +424,7 @@
         background-size: 6vw 6vw;
     }
 }
+
 
 /* Tablet Portrait (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -451,6 +521,12 @@
         transform: translateX(-85%);
     }
 
+    .card-container {
+        bottom: 0vw;
+        right: -10vw;
+        scale: 0.5;
+    }
+
     .mobile-notch {
         width: 7vw;
         height: 1.3vw;
@@ -487,8 +563,8 @@
     }
 
     #social-icons {
-        left: 65%;
-        top: 12%;
+        left: 60%;
+        top: -10%;
     }
 
     .sb-container {
@@ -516,6 +592,10 @@
         width: 40vw;
         height: 75vw;
         transform: translateX(-55%);
+    }
+
+    .card-container {
+        display: none;
     }
 
     .mobile-notch {
@@ -675,8 +755,13 @@
         border: 1.2vw solid #000;
         outline: 0.5vw solid rgb(218, 218, 218);
         border-radius: 5vw;
-        left: 50%;
-        top: 20%;
+        left: 60%;
+        top: 12%;
+        scale: 1.5;
+    }
+
+    .card-container {
+        display: none;
     }
 
     .mobile-notch {
@@ -861,4 +946,6 @@
         width: 2.5vw;
         height: 2.5vw;
     }
+
+
 }

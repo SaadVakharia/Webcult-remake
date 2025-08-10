@@ -1,0 +1,42 @@
+.coffee-container {
+    position: absolute;
+    top: 8vw;
+    left: 10vw;
+}
+
+.coffee-container img {
+    width: 30vw;
+}
+
+.cards-container {
+    position: absolute;
+    top: 12vw;
+    right: 8vw;
+}
+
+.cards-container img {
+    width: 46vw;
+    rotate: -20deg;
+    filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.6));
+}
+
+@media screen and (max-width: 435px) {
+    .coffee-container {
+        top: 0vw;
+        left: 5vw;
+    }
+
+    .coffee-container img {
+        width: 80vw;
+    }
+
+    .cards-container {
+        top: 100vw;
+        right: 0vw;
+    }
+
+    .cards-container img {
+        width: 100vw;
+        rotate: 20deg;
+    }
+}
