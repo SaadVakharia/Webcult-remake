@@ -1,0 +1,45 @@
+.pencil-container {
+    position: absolute;
+    bottom: -12vw;
+    left: 0;
+}
+
+.pencil-container img {
+    width: 52vw;
+    rotate: 90deg;
+    filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.4));
+}
+
+.mouse-container {
+    position: absolute;
+    top: 10vw;
+    left: 36vw;
+    filter: drop-shadow(-1.4vw 1.2vw 0.8vw rgba(0, 0, 0, 0.4));
+}
+
+.mouse-container img {
+    width: 30vw;
+}
+
+@media (max-width: 435px) {
+    .pencil-container {
+        position: absolute;
+        bottom: -10vh;
+        left: -22vh;
+    }
+
+    .pencil-container img {
+        width: 90vh;
+        rotate: 0deg;
+    }
+
+    .mouse-container {
+        position: absolute;
+        top: 20vh;
+        left: 6vh;
+    }
+
+    .mouse-container img {
+        width: 42vh;
+    }
+}

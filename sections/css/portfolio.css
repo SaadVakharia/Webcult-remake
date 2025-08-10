@@ -290,6 +290,14 @@
     padding-top: 6vh;
     padding-left: 0;
   }
+
+  .glasses-container {
+    bottom: 10vw;
+  }
+
+  .glasses-container img {
+    rotate: -45deg;
+  }
 }
 
 .active-center {
