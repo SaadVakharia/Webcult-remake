@@ -1,0 +1,70 @@
+.clock-container {
+    position: absolute;
+    bottom: 4vw;
+    left: 10vw;
+}
+
+.clock-container img {
+    width: 24vw;
+    rotate: -20deg;
+    filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.7));
+}
+
+.airpods-container {
+    position: absolute;
+    top: 10vw;
+    right: 0;
+}
+
+.airpods-container img {
+    width: 24vw;
+    rotate: -20deg;
+    filter: drop-shadow(-0.2vw 1.2vw 0.5vw rgba(0, 0, 0, 0.7));
+}
+
+.sketchpad-container {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+
+.sketchpad-container img {
+    width: 28vw;
+    rotate: 20deg;
+    filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.7));
+}
+
+@media screen and (max-width: 435px) { 
+    .clock-container {
+        bottom: 12vw;
+        left: 15vw;
+    }
+
+    .clock-container img {
+        width: 28vh;
+        rotate: -20deg;
+        filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.7));
+    }
+
+    .airpods-container {
+        top: -10vw;
+        right: 5vw;
+    }
+
+    .airpods-container img {
+        width: 30vh;
+        rotate: 60deg;
+        filter: drop-shadow(-0.2vw 1.2vw 0.5vw rgba(0, 0, 0, 0.7));
+    }
+
+    .sketchpad-container {
+        bottom: 20%;
+        left: 40%;
+    }
+
+    .sketchpad-container img {
+        width: 32vh;
+        rotate: 20deg;
+        filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.7));
+    }
+}
