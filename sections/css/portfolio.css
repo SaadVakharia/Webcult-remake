@@ -278,6 +278,9 @@
     align-items: center;
     justify-content: center;
   }
+  .glasses-container {
+    display: none;
+  }
 }
 
 @media screen and (max-height: 431px) and (orientation: landscape) {
