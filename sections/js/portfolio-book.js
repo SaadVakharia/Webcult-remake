@@ -1,6 +1,6 @@
 // portfolio-book.js
 function flipBook(elBook) {
-  elBook.style.setProperty("--c", 0);
+  elBook.style.setProperty("--c", 1);
 
   elBook.querySelectorAll(".page").forEach((page, idx) => {
     page.style.setProperty("--i", idx);
