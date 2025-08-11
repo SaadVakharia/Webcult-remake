@@ -569,7 +569,8 @@
 
     #social-icons {
         left: 60%;
-        top: -10%;
+        top: 0%;
+        scale: 0.9;
     }
 
     .sb-container {
@@ -888,6 +889,28 @@
         width: 2.5vw;
         height: 2.5vw;
     }
+}
 
+@media (max-width: 380px) and (orientation: portrait) {
+    .card-container {
+        bottom: -5vw;
+        right: -14vw;
+        padding: 6vw 8vw;
+        scale: 0.6;
+    }
+}
 
+@media (max-height: 380px) and (orientation: landscape) {
+    .card-container {
+        bottom: -8vw;
+        right: -20vw;
+        padding: 6vw 8vw;
+        scale: 0.4;
+    }
+
+    #social-icons {
+        left: 70%;
+        top: 0%;
+        scale: 0.8;
+    }
 }
