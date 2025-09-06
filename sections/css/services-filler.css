@@ -12,7 +12,7 @@
 
 .airpods-container {
     position: absolute;
-    top: 10vw;
+    top: 16vw;
     right: 0;
 }
 
@@ -26,6 +26,7 @@
     position: absolute;
     bottom: 0;
     left: 40%;
+    display: none;
 }
 
 .sketchpad-container img {
@@ -59,6 +60,7 @@
 
     .sketchpad-container {
         bottom: 20%;
+        display: block;
         left: 40%;
     }
 

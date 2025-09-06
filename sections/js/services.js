@@ -145,11 +145,6 @@ function openApp(serviceKey) {
       <a class="service-cta-btn" href="#">${service.cta.text}</a>
     `;
 
-    appWindow.style.left = "50%";
-    appWindow.style.top = "10%";
-    appWindow.style.width = "40vw";
-    appWindow.style.height = "";
-    appWindow.style.zIndex = "10000";
     appWindow.classList.remove("closing");
     appWindow.classList.add("visible");
 
@@ -185,39 +180,3 @@ function closeApp() {
     appWindow.style.display = ""; // Reset to default so openApp can set it again
   }, 220);
 }
-
-// Drag and drop for app-window (optional, can be removed if not needed)
-const appWindow = document.getElementById("appWindow");
-const appHeader = document.getElementById("appHeader");
-let isDragging = false,
-  offsetX = 0,
-  offsetY = 0;
-
-appHeader.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  const rect = appWindow.getBoundingClientRect();
-  offsetX = e.clientX - rect.left;
-  offsetY = e.clientY - rect.top;
-  appWindow.style.transition = "none";
-});
-
-document.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  const parentRect = appWindow.parentElement.getBoundingClientRect();
-  let left = e.clientX - parentRect.left - offsetX;
-  let top = e.clientY - parentRect.top - offsetY;
-
-  // Constrain within parent (laptop-bg)
-  left = Math.max(0, Math.min(left, parentRect.width - appWindow.offsetWidth));
-  top = Math.max(0, Math.min(top, parentRect.height - appWindow.offsetHeight));
-
-  appWindow.style.left = left + "px";
-  appWindow.style.top = top + "px";
-  appWindow.style.position = "absolute";
-  appWindow.style.transform = "scale(1)";
-});
-
-document.addEventListener("mouseup", () => {
-  isDragging = false;
-  appWindow.style.transition = "";
-});
