@@ -82,7 +82,7 @@ window.addEventListener("load", () => {
 });
 
 // Initial grid position based on current section
-moveGridTo(positions.servicesFiller.row, positions.servicesFiller.col);
+moveGridTo(positions.home.row, positions.home.col);
 
 // Responsive menu slide-in/out for mobile
 document.addEventListener("DOMContentLoaded", () => {

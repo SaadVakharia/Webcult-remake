@@ -254,10 +254,9 @@
   left: 50%;
   bottom: 45vw;
   transform: translateX(-50%);
-  background: rgba(34, 34, 34, 0.85);
   border-radius: 2vw;
   padding: 0.6vw 2vw 0.6vw 2vw;
-  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.085);
   z-index: 20;
   max-width: 90%;
   width: max-content;
@@ -287,9 +286,6 @@
 .dock img {
   width: 2.8vw;
   height: 2.8vw;
-  border-radius: 0.6vw;
-  background: #fff;
-  box-shadow: 0 0.1vw 0.4vw rgba(0, 0, 0, 0.2);
 }
 
 /* Show label on hover */

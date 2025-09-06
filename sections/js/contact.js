@@ -1,4 +1,5 @@
 let swatchbook;
+
 document.addEventListener("DOMContentLoaded", function () {
   initContactSwatches();
   initContactForm();
@@ -6,32 +7,87 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initContactSwatches() {
   const container = document.getElementById("sb-container");
-  if (container && typeof $ === "function" && $.fn.swatchbook) {
-    swatchbook = $(container).swatchbook();
-
-    // Add click handlers for social media links
-    container.querySelectorAll("div[data-url]").forEach((div) => {
-      div.addEventListener("click", function (e) {
-        // Check if this div is currently active (open)
-        const isActive = this.classList.contains('ff-active');
-        
-        if (isActive) {
-          // If the swatch is open, prevent swatchbook event and open link
-          e.stopPropagation();
-          
-          const url = this.getAttribute("data-url");
-          if (url) {
-            window.open(url, "_blank");
-          }
-        }
-        // If not active, let the swatchbook handle the click to open it
-      });
-    });
-  } else {
-    console.warn("Swatchbook plugin not found or container missing");
+  if (!container) {
+    console.warn("Swatchbook container not found");
+    return;
   }
+
+  const swatches = Array.from(container.querySelectorAll("div"));
+  let current = -1;
+  let zCounter = 100;
+
+  const angleInc = 10;   // spacing between default cards
+  const center = 2;      // index of centered card
+  const proximity = 90;  // gap when opening neighbors
+  const neighbor = 8;    // spacing for further neighbors
+
+  // Arrange cards initially
+  swatches.forEach((swatch, i) => {
+    const angle = angleInc * (i - center);
+    swatch.style.transform = `rotate(${angle}deg)`;
+    swatch.style.zIndex = i;
+    swatch.style.transition = "transform 0.7s ease, box-shadow 0.3s ease";
+    swatch.style.transformOrigin = "bottom center";
+  });
+
+  function openSwatch(swatch) {
+    const idx = swatches.indexOf(swatch);
+
+    if (idx === current) {
+      // second click → open link
+      const url = swatch.getAttribute("data-url");
+      if (url) window.open(url, "_blank");
+      return;
+    }
+
+    // first click → open this swatch
+    setCurrent(swatch);
+    swatch.style.transform = "rotate(0deg)";
+    swatch.style.zIndex = ++zCounter;
+    rotateSiblings(idx);
+  }
+
+  function rotateSiblings(idx) {
+    swatches.forEach((swatch, i) => {
+      if (i === idx) return;
+
+      let angle;
+      if (i < idx) {
+        angle = angleInc * (i - idx);
+      } else if (i - idx === 1) {
+        angle = proximity;
+      } else {
+        angle = proximity + (i - idx - 1) * neighbor;
+      }
+      swatch.style.transform = `rotate(${angle}deg)`;
+    });
+  }
+
+  function setCurrent(swatch) {
+    swatches.forEach(s => s.classList.remove("active"));
+    if (swatch) {
+      swatch.classList.add("active");
+      current = swatches.indexOf(swatch);
+    } else {
+      current = -1;
+    }
+  }
+
+  // Bind clicks
+  swatches.forEach(swatch => {
+    swatch.addEventListener("click", e => {
+      e.preventDefault();
+      openSwatch(swatch);
+    });
+  });
+
+  // Store instance if needed
+  swatchbook = { openSwatch, rotateSiblings };
 }
 
+/* ------------------------------
+   CONTACT FORM LOGIC
+--------------------------------*/
 function initContactForm() {
   const form = document.getElementById("contact-form");
   const status = document.getElementById("contact_results");
@@ -60,7 +116,6 @@ function initContactForm() {
       return;
     }
 
-    // Basic email format validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       status.textContent = "Please enter a valid email address.";
@@ -69,7 +124,7 @@ function initContactForm() {
       return;
     }
 
-    contactBody.style.display = "none";
+    if (contactBody) contactBody.style.display = "none";
 
     status.textContent = "Sending...";
     status.className = "loading";
@@ -84,7 +139,7 @@ function initContactForm() {
         "X-Requested-With": "XMLHttpRequest",
       },
     })
-      .then((res) => res.json()) // Parse JSON response
+      .then((res) => res.json())
       .then((data) => {
         if (data.type === "message") {
           status.textContent = data.text;
@@ -96,12 +151,14 @@ function initContactForm() {
           status.className = "error";
         }
         status.style.display = "block";
+        if (contactBody) contactBody.style.display = "block";
       })
       .catch((err) => {
         console.error("Error sending contact form:", err);
         status.textContent = "Something went wrong. Please try again.";
         status.className = "error";
         status.style.display = "block";
+        if (contactBody) contactBody.style.display = "block";
       });
   });
 }
