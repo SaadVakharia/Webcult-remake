@@ -1,83 +1,107 @@
 const serviceDetails = {
   ecommerce: {
     title: "E-commerce Solutions",
-    description: "We build secure and scalable e-commerce platforms tailored to your business.",
+    icon: "../../asset/images/services/icons/ecommerce.png",
+    description:
+      "Launch your online store with a seamless, secure, and scalable e-commerce platform. We provide everything you need to sell online and grow your business.",
     features: [
-      "Customizable storefronts",
-      "Secure payment gateways",
-      "Inventory management",
-      "Analytics and reporting",
+      { icon: "🛒", text: "Customizable storefronts" },
+      { icon: "💳", text: "Secure payment gateways" },
+      { icon: "📦", text: "Inventory management" },
+      { icon: "📊", text: "Analytics & reporting" },
     ],
+    cta: { text: "Get Started", link: "#" },
   },
   webapps: {
     title: "Web Applications",
-    description: "Custom web applications with seamless performance and responsive UI.",
+    icon: "../../asset/images/services/icons/web-apps.png",
+    description:
+      "Build robust, scalable, and interactive web applications tailored to your business needs. Our apps are fast, secure, and user-friendly.",
     features: [
-      "Cross-browser compatibility",
-      "Scalable architecture",
-      "User-friendly interfaces",
-      "API integrations",
+      { icon: "⚡", text: "High performance" },
+      { icon: "🔗", text: "API integrations" },
+      { icon: "📱", text: "Responsive UI/UX" },
+      { icon: "🔒", text: "Enterprise-grade security" },
     ],
+    cta: { text: "See Portfolio", link: "#" },
   },
   crm: {
     title: "CRM Systems",
-    description: "Customer Relationship Management systems to improve client engagement.",
+    icon: "../../asset/images/services/icons/crm.png",
+    description:
+      "Manage your customer relationships efficiently with our custom CRM solutions. Boost engagement and streamline your sales process.",
     features: [
-      "Contact management",
-      "Sales tracking",
-      "Automation tools",
-      "Customizable dashboards",
+      { icon: "👥", text: "Contact management" },
+      { icon: "📈", text: "Sales tracking" },
+      { icon: "🤖", text: "Automation tools" },
+      { icon: "📊", text: "Custom dashboards" },
     ],
+    cta: { text: "Request Demo", link: "#" },
   },
   erp: {
     title: "ERP Systems",
-    description: "ERP systems to streamline and integrate core business processes.",
+    icon: "../../asset/images/services/icons/erp.png",
+    description:
+      "Integrate all your business processes with our powerful ERP systems. Gain real-time insights and improve operational efficiency.",
     features: [
-      "Financial management",
-      "Supply chain optimization",
-      "Human resource management",
-      "Real-time analytics",
+      { icon: "💼", text: "Financial management" },
+      { icon: "🚚", text: "Supply chain optimization" },
+      { icon: "🧑‍💼", text: "HR management" },
+      { icon: "📊", text: "Real-time analytics" },
     ],
+    cta: { text: "Contact Sales", link: "#" },
   },
   mobile: {
     title: "Mobile Applications",
-    description: "Native and hybrid mobile apps for Android and iOS.",
+    icon: "../../asset/images/services/icons/mobile-app.png",
+    description:
+      "Reach your audience on any device with our native and cross-platform mobile apps. We deliver beautiful, high-performance apps for iOS and Android.",
     features: [
-      "Platform-specific designs",
-      "Offline functionality",
-      "Push notifications",
-      "App store deployment",
+      { icon: "📱", text: "iOS & Android" },
+      { icon: "🔔", text: "Push notifications" },
+      { icon: "☁️", text: "Cloud sync" },
+      { icon: "🛠️", text: "App store deployment" },
     ],
+    cta: { text: "Start Your App", link: "#" },
   },
   websites: {
     title: "Websites",
-    description: "Modern, responsive websites optimized for speed and SEO.",
+    icon: "../../asset/images/services/icons/website.png",
+    description:
+      "Get a modern, responsive website that looks great on any device and ranks well on search engines. Perfect for businesses, portfolios, and more.",
     features: [
-      "Mobile-first design",
-      "Fast loading times",
-      "SEO-friendly structure",
-      "Custom branding",
+      { icon: "🌐", text: "Mobile-first design" },
+      { icon: "⚡", text: "Fast loading" },
+      { icon: "🔍", text: "SEO optimized" },
+      { icon: "🎨", text: "Custom branding" },
     ],
+    cta: { text: "View Templates", link: "#" },
   },
   marketing: {
     title: "Digital Marketing",
-    description: "Data-driven digital marketing strategies to grow your brand.",
+    icon: "../../asset/images/services/icons/marketing.png",
+    description:
+      "Grow your brand and reach new customers with our data-driven digital marketing strategies. We help you stand out in a crowded market.",
     features: [
-      "Social media campaigns",
-      "Email marketing",
-      "Content creation",
-      "Performance tracking",
+      { icon: "📢", text: "Social media campaigns" },
+      { icon: "✉️", text: "Email marketing" },
+      { icon: "📝", text: "Content creation" },
+      { icon: "📈", text: "Performance tracking" },
     ],
+    cta: { text: "Boost My Brand", link: "#" },
   },
   seo: {
     title: "SEO Services",
-    description: "Technical and content SEO to improve your search engine ranking.",
+    icon: "../../asset/images/services/icons/seo.png",
+    description:
+      "Improve your search engine rankings and drive more organic traffic with our comprehensive SEO services.",
     features: [
-      "Keyword research",
-      "On-page optimization",
-      "Backlink building",
-      "Performance monitoring",
+      { icon: "🔑", text: "Keyword research" },
+      { icon: "🛠️", text: "On-page optimization" },
+      { icon: "🔗", text: "Backlink building" },
+      { icon: "📊", text: "Performance monitoring" },
     ],
+    cta: { text: "Free SEO Audit", link: "#" },
   },
 };
 
@@ -86,20 +110,114 @@ function openApp(serviceKey) {
   const appTitle = document.getElementById("appTitle");
   const appContent = document.getElementById("appContent");
 
-  const service = serviceDetails[serviceKey];
+  // Always ensure display is set so window can open after closing
   appWindow.style.display = "flex";
-  appTitle.textContent = service.title;
 
-  // Create dynamic content
-  appContent.innerHTML = `
-    <p>${service.description}</p>
-    <ul>
-      ${service.features.map((feature) => `<li>${feature}</li>`).join("")}
-    </ul>
-  `;
+  // If already visible, close first for animation, then open after
+  if (appWindow.classList.contains("visible")) {
+    appWindow.classList.remove("visible");
+    appWindow.classList.add("closing");
+    setTimeout(() => {
+      appWindow.classList.remove("closing");
+      showAppContent();
+    }, 220);
+  } else {
+    showAppContent();
+  }
+
+  function showAppContent() {
+    const service = serviceDetails[serviceKey];
+    appTitle.textContent = service.title;
+    appContent.innerHTML = `
+      <div class="service-title-row">
+        <img src="${service.icon}" alt="${service.title} Icon" class="service-main-icon" />
+        <span class="service-title-text">${service.title}</span>
+      </div>
+      <div class="service-desc">${service.description}</div>
+      <ul class="features-list">
+        ${service.features
+          .map(
+            (feature) =>
+              `<li><span class="feature-icon">${feature.icon}</span>${feature.text}</li>`
+          )
+          .join("")}
+      </ul>
+      <a class="service-cta-btn" href="#">${service.cta.text}</a>
+    `;
+
+    appWindow.style.left = "50%";
+    appWindow.style.top = "10%";
+    appWindow.style.width = "40vw";
+    appWindow.style.height = "";
+    appWindow.style.zIndex = "10000";
+    appWindow.classList.remove("closing");
+    appWindow.classList.add("visible");
+
+    // Only make the CTA button go to contact, not window controls
+    const ctaBtn = appWindow.querySelector(".service-cta-btn");
+    if (ctaBtn) {
+      ctaBtn.onclick = function (e) {
+        e.preventDefault();
+        const contactMenuItem = document.getElementById("contact-menu-item");
+        if (contactMenuItem) {
+          const contactLink = contactMenuItem.querySelector("a");
+          if (contactLink) {
+            contactLink.click();
+          } else {
+            contactMenuItem.click();
+          }
+        } else if (typeof goTo === "function") {
+          goTo("contact");
+        } else {
+          window.location.hash = "#contact";
+        }
+      };
+    }
+  }
 }
 
 function closeApp() {
   const appWindow = document.getElementById("appWindow");
-  appWindow.style.display = "none";
+  appWindow.classList.remove("visible");
+  appWindow.classList.add("closing");
+  setTimeout(() => {
+    appWindow.classList.remove("closing");
+    appWindow.style.display = ""; // Reset to default so openApp can set it again
+  }, 220);
 }
+
+// Drag and drop for app-window (optional, can be removed if not needed)
+const appWindow = document.getElementById("appWindow");
+const appHeader = document.getElementById("appHeader");
+let isDragging = false,
+  offsetX = 0,
+  offsetY = 0;
+
+appHeader.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  const rect = appWindow.getBoundingClientRect();
+  offsetX = e.clientX - rect.left;
+  offsetY = e.clientY - rect.top;
+  appWindow.style.transition = "none";
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  const parentRect = appWindow.parentElement.getBoundingClientRect();
+  let left = e.clientX - parentRect.left - offsetX;
+  let top = e.clientY - parentRect.top - offsetY;
+
+  // Constrain within parent (laptop-bg)
+  left = Math.max(0, Math.min(left, parentRect.width - appWindow.offsetWidth));
+  top = Math.max(0, Math.min(top, parentRect.height - appWindow.offsetHeight));
+
+  appWindow.style.left = left + "px";
+  appWindow.style.top = top + "px";
+  appWindow.style.position = "absolute";
+  appWindow.style.transform = "scale(1)";
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  appWindow.style.transition = "";
+});

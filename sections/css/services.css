@@ -1,303 +1,297 @@
-.laptop {
-  font-family: Tahoma, Geneva, sans-serif;
-  margin-left: 10vw;
-  margin-top: 5vw;
-  width: 40vw;
-  height: 90vh;
-  border-radius: 1.2vw;
-  background: linear-gradient(145deg, #3b3b3b, #2f2f2f);
-  box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.6), inset 0 -0.2vw 0.4vw rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border: 0.2vw solid #1c1c1c;
+/* Laptop background image container */
+.laptop-bg {
   position: relative;
+  width: 70vw;
+  margin: 0 auto;
+  top: 4vw;
+  left: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 60vh;
   z-index: 1000;
-  scale: 1.2;
 }
 
-/* Screen Area */
-.screen {
-  flex: 1;
-  background: radial-gradient(circle, #202020, #1a1a1a);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 0.2vw solid #1a1a1a;
-  box-shadow: inset 0 -0.2vw 0.4vw rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-
-.bezel {
-  width: 95%;
-  height: 87%;
-  background-image: url('../../asset/images/services/laptop-wallpaper.webp');
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 0 0 1vw rgba(0, 0, 0, 0.5);
-  border: 0.6vw solid #0f0f0f;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 0.8vw;
-}
-
-.camera {
-  width: 0.6vw;
-  height: 0.6vw;
-  background: radial-gradient(circle, #444, #000);
-  border-radius: 50%;
-  margin-top: -1.2vw;
-  box-shadow: 0 0 0.3vw rgba(0, 0, 0, 0.8);
-}
-
-.display {
-  margin-top: 2vh;
-  text-align: center;
-  color: white;
-  text-shadow: 0 0.1vw 0.2vw rgba(255, 255, 255, 0.5);
-}
-
-.display h3 {
-  margin: 0;
-  font-size: 2.4vh;
-}
-
-.display p {
-  font-size: 1.2vh;
-  margin-top: 0.4vh;
-}
-
-/* Keyboard Area */
-.keyboard {
-  flex: 1;
-  background: linear-gradient(145deg, #3b3b3b, #2f2f2f);
-  max-height: 31%;
-  padding: 2vw;
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.key-row {
-  display: flex;
-  gap: 0.8vw;
-  justify-content: center;
-}
-
-.key {
-  width: 1.8vw;
-  height: 1.8vw;
-  background: linear-gradient(145deg, #5e5e5e, #4a4a4a);
-  border-radius: 0.2vw;
-  box-shadow: inset 0 0.2vw 0.4vw rgba(0, 0, 0, 0.6), 0 0.2vw 0.4vw rgba(255, 255, 255, 0.1);
-  transition: transform 0.1s ease, background 0.2s ease;
-}
-
-.key:hover {
-  background: linear-gradient(145deg, #6e6e6e, #5a5a5a);
-}
-
-.key-wide {
-  width: 3.4vw;
-}
-
-.key-extra-wide {
-  width: 16vw;
-}
-
-.key:active {
-  transform: translateY(0.4vw);
-  background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
-}
-
-.trackpad {
-  width: 12vw;
-  height: 8vh;
-  background: linear-gradient(145deg, #4d4d4d, #3d3d3d);
-  border-radius: 0.8vw;
-  margin-top: 1.2vh;
-  box-shadow: inset 0 0.2vw 0.4vw rgba(0, 0, 0, 0.3), 0 0.2vw 0.4vw rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-
-/* Reflection Effect */
-.laptop::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.laptop-image {
   width: 100%;
-  height: 50%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+  height: auto;
+  display: block;
   pointer-events: none;
+  user-select: none;
 }
 
-.services-list {
-  list-style: none;
-  padding: 0;
-  margin: 1vh 0 0;
-  font-size: 1.4vh;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.services-list li {
-  margin: 0.4vh 0;
-}
-
-.services-list li:hover {
-  cursor: pointer;
-}
-
+/* App window styles */
 .app-window {
   position: absolute;
-  top: 6vh;
+  top: 10%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 30vw;
-  max-height: 70vh;
+  transform: translateX(-50%) scale(0.95);
+  width: 40vw;
+  max-width: 95vw;
+  min-width: 300px;
+  min-height: 200px;
   background: #fff;
   border-radius: 0.6vw;
   box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.5);
   display: none;
   flex-direction: column;
   overflow: hidden;
-  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: 
+    opacity 0.25s cubic-bezier(.4,0,.2,1),
+    transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+.app-window.visible {
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+  transform: translateX(-50%) scale(1.04);
+  animation: mac-window-pop 0.32s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes mac-window-pop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.04);
+  }
+}
+
+.app-window.closing {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) scale(0.9);
+  transition:
+    opacity 0.22s cubic-bezier(.4,0,.2,1),
+    transform 0.22s cubic-bezier(.4,0,.2,1);
 }
 
 .app-header {
-  background: #2d2d2d;
-  color: #fff;
-  padding: 0.8vh 1.2vw;
-  font-size: 1.4vh;
+  background: linear-gradient(180deg, #ececec 80%, #d6d6d6 100%);
+  color: #222;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0.6vw 0.6vw 0 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0.5vh 1vw;
+  cursor: move;
+  user-select: none;
 }
 
 .close-btn {
   background: transparent;
-  color: white;
   border: none;
-  font-size: 1.6vh;
+  color: #c10d4d;
+  font-size: 2vw;
+  font-weight: bold;
   cursor: pointer;
+  padding: 0 0.5vw;
+  margin-left: 1vw;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.close-btn:hover {
+  color: #fff;
+  background: #c10d4d;
+  border-radius: 0.3vw;
+}
+
+/* Remove Mac controls styles */
+.mac-controls,
+.mac-btn,
+.mac-btn.close,
+.mac-btn.minimize,
+.mac-btn.maximize,
+.mac-btn:active {
+  display: none !important;
 }
 
 .app-content {
-  padding: 1.6vh;
-  font-size: 1.4vh;
-  color: #111;
-  overflow-y: auto;
-}
-
-/* Services Grid */
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2vw;
-  list-style: none;
-  padding: 0;
-  margin: 2vh 0;
-  position: relative;
-  bottom: -15%;
-  scale: 0.85;
-}
-
-.services-grid li {
+  padding: 1.5vh 1.2vw;
+  font-size: 1.25vw;
+  color: #222;
+  min-height: 18vh;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2vh;
+  background: linear-gradient(135deg, #f8f8f8 80%, #e8e8ef 100%);
+  box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.08), 0 0 0.2vw #aaa;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 0.6vw;
+}
+
+/* Service Title */
+.app-content .service-title-row {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 8vw;
+  gap: 0.3vw;
+  margin-bottom: 0.5vh;
+  width: 100%;
+}
+
+.app-content .service-main-icon {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 0.2vw;
+  margin-right: 0.2vw;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.app-content .service-title-text {
+  font-size: 1.2vw;
+  font-weight: bold;
+  color: #3a3a7a;
+  letter-spacing: 0.02em;
+  word-break: break-word;
+  flex: 1;
+}
+
+.app-content .service-title,
+.app-content .service-title::before {
+  display: none;
+}
+
+/* Service Description */
+.app-content .service-desc {
+  font-size: 0.95vw;
+  color: #444;
+  margin-bottom: 1.2vh;
+  line-height: 1.5;
+  word-break: break-word;
+  width: 100%;
+}
+
+/* Features List */
+.app-content .features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1vh 2vw;
+  width: 100%;
+}
+
+.app-content .features-list li {
+  background: #fff;
+  border-radius: 0.4vw;
+  box-shadow: 0 0.1vw 0.4vw rgba(60, 60, 120, 0.07);
+  padding: 0.7vh 1vw 0.7vh 2.7vw;
+  display: flex;
+  align-items: center;
+  gap: 0.7vw;
+  position: relative;
+  font-size: 1vw;
+  color: #2a2a4a;
+  transition: background 0.2s;
+}
+
+.app-content .features-list li::before {
+  display: none;
+}
+
+.app-content .feature-icon {
+  font-size: 1.3vw;
+  margin-right: 0.5vw;
+  display: inline-block;
+  width: 1.7vw;
   text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-/* Example for other sections */
-.services-grid li img {
-  width: 4.4vw;
-  height: 4.4vw;
-  transition: transform 0.3s ease;
+.service-cta-btn {
+  margin-top: 2vh;
+  align-self: flex-end;
+  background: linear-gradient(90deg, #3a3a7a 60%, #27c93f 100%);
+  color: #fff;
+  font-size: 1.1vw;
+  font-weight: 600;
+  padding: 0.8vw 2vw;
+  border-radius: 0.5vw;
+  text-decoration: none;
+  box-shadow: 0 0.2vw 0.7vw rgba(60, 60, 120, 0.10);
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.03em;
 }
 
-.services-grid li:hover img {
+.service-cta-btn:hover {
+  background: linear-gradient(90deg, #27c93f 40%, #3a3a7a 100%);
   transform: scale(1.05);
 }
 
-.services-grid li span {
-  font-size: 0.8vw;
+/* Dock styles */
+.dock {
+  position: absolute;
+  left: 50%;
+  bottom: 10vw;
+  transform: translateX(-50%);
+  background: rgba(34, 34, 34, 0.85);
+  border-radius: 2vw;
+  padding: 0.6vw 2vw 0.6vw 2vw;
+  box-shadow: 0 0.2vw 1vw rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  max-width: 90%;
+  width: max-content;
 }
 
-.services-grid li:hover {
-  transform: scale(1.1);
+.dock ul {
+  display: flex;
+  gap: 1vw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-@media (max-height: 480px) and (orientation: landscape) {
-  .laptop {
-    margin-left: 0;
-  }
+.dock li {
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (max-width: 480px) {
-  .laptop {
-    margin-left: 0;
-    width: 74vw;
-    height: 50vh;
-  }
+.dock li:hover {
+  transform: scale(1.15);
+}
 
-  .keyboard {
-    max-height: 36%;
-  }
+.dock img {
+  width: 2.8vw;
+  height: 2.8vw;
+  border-radius: 0.6vw;
+  background: #fff;
+  box-shadow: 0 0.1vw 0.4vw rgba(0, 0, 0, 0.2);
+}
 
-  .key-row {
-    scale: 1.8;
-  }
+/* Show label on hover */
+.dock-label {
+  display: none;
+  position: absolute;
+  top: -2.8vw;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 0.3vw 0.8vw;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.95;
+}
 
-  .trackpad {
-    width: 20vw;
-    height: 6vh;
-  }
-
-  .display h3 {
-    font-size: 1.8vh;
-  }
-
-  .services-grid {
-    bottom: -5%;
-  }
-
-  .services-grid li {
-    width: 16vw;
-  }
-
-  .services-grid li img {
-    width: 10vw;
-    height: 10vw;
-  }
-
-  .services-grid li span {
-    font-size: 2.2vw;
-  }
-
-  .app-window {
-    width: 55vw;
-    max-height: 16vh;
-  }
-
-  .app-header {
-    font-size: 1.1vh;
-  }
-
-  .app-content {
-    padding: 0 1vh;
-    font-size: 1vh;
-  }
+.dock li:hover .dock-label {
+  display: block;
 }

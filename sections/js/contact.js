@@ -7,12 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
 function initContactSwatches() {
   const container = document.getElementById("sb-container");
   if (container && typeof $ === "function" && $.fn.swatchbook) {
-    swatchbook = $(container).swatchbook({
-      angleInc: -10,
-      proximity: -100,
-      neighbor: -20,
-      closeIdx: 11,
+    swatchbook = $(container).swatchbook();
+
+    // Add click handlers for social media links
+    container.querySelectorAll("div[data-url]").forEach((div) => {
+      div.addEventListener("click", function (e) {
+        // Check if this div is currently active (open)
+        const isActive = this.classList.contains('ff-active');
+        
+        if (isActive) {
+          // If the swatch is open, prevent swatchbook event and open link
+          e.stopPropagation();
+          
+          const url = this.getAttribute("data-url");
+          if (url) {
+            window.open(url, "_blank");
+          }
+        }
+        // If not active, let the swatchbook handle the click to open it
+      });
     });
+  } else {
+    console.warn("Swatchbook plugin not found or container missing");
   }
 }
 
@@ -70,12 +86,13 @@ function initContactForm() {
     })
       .then((res) => res.json()) // Parse JSON response
       .then((data) => {
-        if (data.type === 'message') {
+        if (data.type === "message") {
           status.textContent = data.text;
           status.className = "success";
           form.reset();
         } else {
-          status.textContent = data.text || "Something went wrong. Please try again.";
+          status.textContent =
+            data.text || "Something went wrong. Please try again.";
           status.className = "error";
         }
         status.style.display = "block";

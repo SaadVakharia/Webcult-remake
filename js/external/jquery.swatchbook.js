@@ -27,15 +27,15 @@
 
 	$.SwatchBook.defaults = {
 		// index of initial centered item
-		center : 6,
+		center : 3,
 		// number of degrees that is between each item
 		angleInc : 8,
 		speed : 700,
 		easing : 'ease',
 		// amount in degrees for the opened item's next sibling
-		proximity : 45,
+		proximity : 90,
 		// amount in degrees between the opened item's next siblings
-		neighbor : 4,
+		neighbor : 8,
 		// animate on load
 		onLoadAnim : true,
 		// if it should be closed by default
@@ -183,7 +183,7 @@
 
 	};
 	
-	var logError			= function( message ) {
+	var logError = function( message ) {
 
 		if ( window.console ) {
 
