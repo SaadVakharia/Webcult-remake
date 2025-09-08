@@ -106,6 +106,12 @@ const serviceDetails = {
 };
 
 function openApp(serviceKey) {
+  // Remove active class from all dock items
+  document.querySelectorAll('.dock li').forEach(li => li.classList.remove('active'));
+  // Add active class to the clicked dock item
+  const dockItem = document.querySelector(`.dock li[onclick*="${serviceKey}"]`);
+  if (dockItem) dockItem.classList.add('active');
+
   const appWindow = document.getElementById("appWindow");
   const appTitle = document.getElementById("appTitle");
   const appContent = document.getElementById("appContent");
@@ -175,8 +181,15 @@ function closeApp() {
   const appWindow = document.getElementById("appWindow");
   appWindow.classList.remove("visible");
   appWindow.classList.add("closing");
+  // Remove active class from all dock items
+  document.querySelectorAll('.dock li').forEach(li => li.classList.remove('active'));
   setTimeout(() => {
     appWindow.classList.remove("closing");
     appWindow.style.display = ""; // Reset to default so openApp can set it again
   }, 220);
+}
+
+// Initialize services section (called from main.js after loading)
+function initServices() {
+  openApp('ecommerce');
 }

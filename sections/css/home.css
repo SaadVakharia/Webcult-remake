@@ -113,7 +113,7 @@
   position: absolute;
   bottom: -10vw;
   left: -6vw;
-  z-index: 100;
+  z-index: 400;
 }
 
 .pot img {

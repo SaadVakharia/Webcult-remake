@@ -1,48 +1,80 @@
-<div class="laptop-bg">
-  <img src="../../asset/images/services/laptop-image.webp" alt="Laptop" class="laptop-image" />
-  <div class="app-window" id="appWindow">
-    <div class="app-header" id="appHeader">
-      <span id="appTitle">App Title</span>
-      <button class="close-btn" onclick="closeApp()" aria-label="Close">&times;</button>
+<div class="services-section">
+  <div class="laptop-bg">
+    <img
+      src="../../asset/images/services/laptop-image.webp"
+      alt="Laptop"
+      class="laptop-image"
+    />
+    <div class="app-window" id="appWindow">
+      <div class="app-header" id="appHeader">
+        <span id="appTitle">App Title</span>
+        <button class="close-btn" onclick="closeApp()" aria-label="Close">
+          &times;
+        </button>
+      </div>
+      <div class="app-content" id="appContent">
+        <!-- Dynamic content will be injected here -->
+      </div>
     </div>
-    <div class="app-content" id="appContent">
-      <!-- Dynamic content will be injected here -->
+    <div class="dock" style="z-index: 10000">
+      <ul>
+        <li data-label="E-commerce Solutions" onclick="openApp('ecommerce')">
+          <img
+            src="../../asset/images/services/icons/ecommerce.png"
+            alt="E-commerce"
+          />
+          <span class="dock-label">E-commerce Solutions</span>
+        </li>
+        <li data-label="Web Apps" onclick="openApp('webapps')">
+          <img
+            src="../../asset/images/services/icons/web-apps.png"
+            alt="Web Apps"
+          />
+          <span class="dock-label">Web Apps</span>
+        </li>
+        <li data-label="CRM" onclick="openApp('crm')">
+          <img src="../../asset/images/services/icons/crm.png" alt="CRM" />
+          <span class="dock-label">CRM</span>
+        </li>
+        <li data-label="ERP" onclick="openApp('erp')">
+          <img src="../../asset/images/services/icons/erp.png" alt="ERP" />
+          <span class="dock-label">ERP</span>
+        </li>
+        <li data-label="Mobile Apps" onclick="openApp('mobile')">
+          <img
+            src="../../asset/images/services/icons/mobile-app.png"
+            alt="Mobile Apps"
+          />
+          <span class="dock-label">Mobile Apps</span>
+        </li>
+        <li data-label="Websites" onclick="openApp('websites')">
+          <img
+            src="../../asset/images/services/icons/website.png"
+            alt="Websites"
+          />
+          <span class="dock-label">Websites</span>
+        </li>
+        <li data-label="Digital Marketing" onclick="openApp('marketing')">
+          <img
+            src="../../asset/images/services/icons/marketing.png"
+            alt="Marketing"
+          />
+          <span class="dock-label">Digital Marketing</span>
+        </li>
+        <li data-label="SEO" onclick="openApp('seo')">
+          <img src="../../asset/images/services/icons/seo.png" alt="SEO" />
+          <span class="dock-label">SEO</span>
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="dock" style="z-index: 10000;">
-    <ul>
-      <li data-label="E-commerce Solutions" onclick="openApp('ecommerce')">
-        <img src="../../asset/images/services/icons/ecommerce.png" alt="E-commerce" />
-        <span class="dock-label">E-commerce Solutions</span>
-      </li>
-      <li data-label="Web Apps" onclick="openApp('webapps')">
-        <img src="../../asset/images/services/icons/web-apps.png" alt="Web Apps" />
-        <span class="dock-label">Web Apps</span>
-      </li>
-      <li data-label="CRM" onclick="openApp('crm')">
-        <img src="../../asset/images/services/icons/crm.png" alt="CRM" />
-        <span class="dock-label">CRM</span>
-      </li>
-      <li data-label="ERP" onclick="openApp('erp')">
-        <img src="../../asset/images/services/icons/erp.png" alt="ERP" />
-        <span class="dock-label">ERP</span>
-      </li>
-      <li data-label="Mobile Apps" onclick="openApp('mobile')">
-        <img src="../../asset/images/services/icons/mobile-app.png" alt="Mobile Apps" />
-        <span class="dock-label">Mobile Apps</span>
-      </li>
-      <li data-label="Websites" onclick="openApp('websites')">
-        <img src="../../asset/images/services/icons/website.png" alt="Websites" />
-        <span class="dock-label">Websites</span>
-      </li>
-      <li data-label="Digital Marketing" onclick="openApp('marketing')">
-        <img src="../../asset/images/services/icons/marketing.png" alt="Marketing" />
-        <span class="dock-label">Digital Marketing</span>
-      </li>
-      <li data-label="SEO" onclick="openApp('seo')">
-        <img src="../../asset/images/services/icons/seo.png" alt="SEO" />
-        <span class="dock-label">SEO</span>
-      </li>
-    </ul>
+  <div class="headphones-container">
+    <img src="../../asset/images/services/headphones.webp" alt="Headphones">
   </div>
 </div>
+<script>
+  // Open the E-commerce Solutions window by default on page load
+  window.addEventListener('DOMContentLoaded', function() {
+    openApp('ecommerce');
+  });
+</script>

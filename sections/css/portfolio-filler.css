@@ -1,6 +1,6 @@
 .lamp-container {
     position: absolute;
-    left: 0;
+    left: -20vw;
     top: -30vw;
     z-index: 100;
 }
@@ -10,11 +10,12 @@
     height: auto;
     rotate: 20deg;
     filter: drop-shadow(-1.4vw 1.2vw 0.5vw rgba(0, 0, 0, 0.6));
+    scale: 0.9;
 }
 
 .pen-holder-container {
     position: absolute;
-    left: 50%;
+    left: 40%;
     top: 60%;
     transform: translate(-50%, -50%);
 }
@@ -27,7 +28,7 @@
 
 .files-container {
     position: absolute;
-    right: -10vw;
+    right: 0;
     top: 50%;
     transform: translate(0, -50%);
     z-index: 50;
@@ -44,6 +45,7 @@
     .lamp-container {
         left: 0;
         top: -20vh;
+        display: none;
     }
 
     .lamp-container img {

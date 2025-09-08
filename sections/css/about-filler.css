@@ -8,13 +8,13 @@
 .notepad-container {
     position: absolute;
     top: 2vh;
-    left: 20vw;
+    left: 20vw; 
     z-index: 200;
 }
 
 .calculator-container {
     position: absolute;
-    top: 8vh;
+    top: 16vh;
     right: 8vw;
     z-index: 200;
 }
@@ -26,7 +26,8 @@
 .calculator-container img {
     width: 28vw;
     filter: drop-shadow(-1.4vw 1.2vw 1.5vw rgba(0, 0, 0, 0.6));
-    rotate: -16deg;
+    rotate: -8deg;
+    scale: 0.9;
 }
 
 @media (max-width: 435px) {
