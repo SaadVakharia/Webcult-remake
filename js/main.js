@@ -1,5 +1,16 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const sections = ["home", "portfolio", "services", "about", "contact", "home-filler", "portfolio-filler", "services-filler", "about-filler", "contact-filler"];
+  const sections = [
+    "home",
+    "portfolio",
+    "services",
+    "about",
+    "contact",
+    "home-filler",
+    "portfolio-filler",
+    "services-filler",
+    "about-filler",
+    "contact-filler",
+  ];
   const fetchPromises = sections.map((section) =>
     fetch(`sections/html/${section}.html`)
       .then((res) =>
@@ -44,8 +55,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // Wait for HTML content to load first
   Promise.all(fetchPromises).then(() => {
     // Now wait for all images to load
-    const images = document.querySelectorAll('img');
-    const imagePromises = Array.from(images).map(img => {
+    const images = document.querySelectorAll("img");
+    const imagePromises = Array.from(images).map((img) => {
       return new Promise((resolve) => {
         if (img.complete) {
           resolve();
@@ -57,13 +68,15 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Also wait for background images in CSS
-    const elementsWithBgImages = document.querySelectorAll('[style*="background-image"], .cell, .mobile-screen, .bezel');
-    const bgImagePromises = Array.from(elementsWithBgImages).map(el => {
+    const elementsWithBgImages = document.querySelectorAll(
+      '[style*="background-image"], .cell, .mobile-screen, .bezel'
+    );
+    const bgImagePromises = Array.from(elementsWithBgImages).map((el) => {
       return new Promise((resolve) => {
         const computedStyle = window.getComputedStyle(el);
         const bgImage = computedStyle.backgroundImage;
-        
-        if (bgImage && bgImage !== 'none' && bgImage.includes('url(')) {
+
+        if (bgImage && bgImage !== "none" && bgImage.includes("url(")) {
           const url = bgImage.slice(4, -1).replace(/["']/g, "");
           const img = new Image();
           img.onload = resolve;

@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initPortfolioCards() {
   const cards = document.querySelectorAll(".item-container.card");
+  const container = document.querySelector('.mobile.jumbled-cards');
   let activeCard = null;
 
   // Define links for each card in order
@@ -19,35 +20,47 @@ function initPortfolioCards() {
 
   cards.forEach((card, idx) => {
     card.addEventListener("click", function (e) {
-      // If this card is already active, go to the link
+      // If this card is already active, open the link
       if (activeCard === card) {
         window.open(cardLinks[idx], "_blank");
         return;
       }
-
-      // Remove active state from previous card
+      // If another card is active, close it and do nothing else
       if (activeCard) {
         activeCard.classList.remove("active-center");
         activeCard.style.zIndex = activeCard.dataset.originalZ || "";
         activeCard.style.transform = activeCard.dataset.originalTransform || "";
         activeCard.style.left = activeCard.dataset.originalLeft || "";
         activeCard.style.top = activeCard.dataset.originalTop || "";
+        activeCard = null;
+        e.stopPropagation();
+        return;
       }
-
-      // Save original styles
+      // If this card is not active, open it
       card.dataset.originalZ = card.style.zIndex;
       card.dataset.originalTransform = card.style.transform;
       card.dataset.originalLeft = card.style.left;
       card.dataset.originalTop = card.style.top;
-
-      // Center and scale the card
       card.classList.add("active-center");
-      card.style.zIndex = "999";
+      card.style.zIndex = "10000";
       card.style.transform = "translate(-50%, -50%) scale(1.5)";
       card.style.left = "50vw";
       card.style.top = "50vh";
-
       activeCard = card;
     });
   });
+
+  // Click outside: remove active-center
+  if (container) {
+    container.addEventListener('click', function (e) {
+      if (activeCard && !e.target.closest('.card')) {
+        activeCard.classList.remove("active-center");
+        activeCard.style.zIndex = activeCard.dataset.originalZ || "";
+        activeCard.style.transform = activeCard.dataset.originalTransform || "";
+        activeCard.style.left = activeCard.dataset.originalLeft || "";
+        activeCard.style.top = activeCard.dataset.originalTop || "";
+        activeCard = null;
+      }
+    });
+  }
 }

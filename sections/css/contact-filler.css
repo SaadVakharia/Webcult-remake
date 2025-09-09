@@ -33,6 +33,7 @@
     .cards-container {
         top: 100vw;
         right: 0vw;
+        scale: 0.7;
     }
 
     .cards-container img {

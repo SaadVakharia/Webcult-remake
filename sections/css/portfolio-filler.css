@@ -54,8 +54,9 @@
     }
 
     .pen-holder-container {
-        left: 30%;
-        top: 80%;
+        left: 40%;
+        top: 70%;
+        scale: 1.2;
     }
 
     .pen-holder-container img {
@@ -64,9 +65,10 @@
     }
 
     .files-container {
-        right: -10vw;
-        top: 55%;
+        right: 10vw;
+        top: 25%;
         transform: translate(0, -50%);
+        scale: 1.2;
     }
 
     .files-container img {

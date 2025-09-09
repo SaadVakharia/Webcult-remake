@@ -190,8 +190,8 @@
   }
 
   .pot-container {
-    left: -8vw;
-    top: -8vw;
+    left: -14vw;
+    top: -14vw;
   }
 
   .pot img {
@@ -201,9 +201,9 @@
   }
 
   .home-section .keyboard-container {
-    bottom: -25vw;
-    right: 25vw;
-    scale: 0.6;
+    bottom: -32vw;
+    right: 20vw;
+    scale: 0.5;
   }
 
 }
