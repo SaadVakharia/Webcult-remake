@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->addAddress($emailConfig['to_email']);
 
         // Content
-        $mail->Subject = $subject;
+        $mail->Subject = "[Webcult] " . $subject;
         $mail->Body = "Message: $message\n\nFrom: $user_name\nEmail: $user_email";
 
         $mail->send();
